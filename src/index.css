@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F2EBE1;
+    /* Warm cream background from Soul */
+    color: #2D3728;
+    /* Deep olive/forest text */
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Instrument Serif', serif;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .font-serif-italic {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+  }
+
+  /* Organic Pill Shapes */
+  .pill-organic {
+    border-radius: 100px;
+    background-color: #4F634B;
+    color: #F2EBE1;
+  }
+
+  /* Soft solid backgrounds replacing gradients */
+  .bg-primary-solid {
+    background-color: #4F634B;
+    /* Exact olive green button */
+  }
+
+  .bg-secondary-solid {
+    background-color: #C5D0BC;
+    /* Light sage green */
+  }
+
+  .bg-card-solid {
+    background-color: #D8E1D3;
+    /* Even lighter sage/pistachio */
+  }
+
+  /* The image reference doesn't really use glassmorphism, it uses stark solid organic flat shapes */
+  .card-organic {
+    background-color: #D8E1D3;
+    border-radius: 24px;
+    border: none;
+    box-shadow: none;
+    /* The reference is flat, minimal shadow */
+  }
+}
