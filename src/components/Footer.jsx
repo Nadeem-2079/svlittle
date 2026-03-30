@@ -20,9 +20,9 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '24px' }}>
-              <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: '32px', fontWeight: '400', color: '#F2EBE1', letterSpacing: '-0.02em' }}>
-                Soul<span style={{ fontSize: '15px', marginLeft: '6px', opacity: 0.7, fontFamily: "'Inter', sans-serif" }}>Therapy</span>
-              </div>
+              <Link to="/">
+                <img src="/logo.jpg" alt="SV Little Leapsters Logo" style={{ height: '64px', objectFit: 'contain' }} />
+              </Link>
             </div>
             <p style={{ fontSize: '14px', color: '#C5D0BC', lineHeight: 1.7, marginBottom: '32px', maxWidth: '280px' }}>
               We specialise in active, evidence-based therapy approached in a comfortable, family-centred environment.

@@ -69,11 +69,9 @@ export default function Header() {
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
-        {/* Logo - Matches "Soul" aesthetic */}
+        {/* Logo */}
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-          <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: '28px', fontWeight: '400', color: '#2D3728', letterSpacing: '-0.02em' }}>
-            Soul<span style={{ fontSize: '14px', marginLeft: '6px', opacity: 0.6, fontFamily: "'Inter', sans-serif" }}>Therapy</span>
-          </div>
+          <img src="/logo.jpg" alt="SV Little Leapsters Logo" style={{ height: '48px', objectFit: 'contain' }} />
         </Link>
 
         {/* Desktop Nav - Pill shaped, bordered block */}
