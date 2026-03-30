@@ -76,7 +76,7 @@ export default function Header() {
 
         {/* Desktop Nav - Pill shaped, bordered block */}
         <nav style={{
-          display: 'flex', alignItems: 'center', gap: '2px',
+          alignItems: 'center', gap: '2px',
           border: '1px solid #C5D0BC', borderRadius: '100px',
           padding: '6px 20px', backgroundColor: 'rgba(242, 235, 225, 0.5)'
         }} className="hidden md:flex">
@@ -86,8 +86,8 @@ export default function Header() {
         </nav>
 
         {/* Action Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="hidden md:flex">
-          <Link to="/contact" style={{
+        <div style={{ alignItems: 'center', gap: '12px' }} className="hidden md:flex">
+          <Link to="/#contact" style={{
             color: '#3E4F39', padding: '10px 20px', borderRadius: '100px',
             fontSize: '14px', fontWeight: '500', textDecoration: 'none',
             border: '1px solid #C5D0BC', background: 'transparent'
@@ -107,7 +107,7 @@ export default function Header() {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: '#2D3728' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#2D3728' }}
           className="flex md:hidden"
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -125,6 +125,31 @@ export default function Header() {
           {navLinks.map((link) => (
             <NavItem key={link.label} label={link.label} path={link.path} isMobile={true} />
           ))}
+          
+          <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <Link 
+              to="/#contact" 
+              onClick={() => setMenuOpen(false)}
+              style={{
+                color: '#F2EBE1', padding: '16px', borderRadius: '100px',
+                fontSize: '18px', fontWeight: '500', textDecoration: 'none',
+                border: '1px solid rgba(242, 235, 225, 0.2)', textAlign: 'center'
+              }}
+            >
+              Contact Us
+            </Link>
+            <a 
+              href="tel:+918110024552" 
+              style={{
+                backgroundColor: '#F2EBE1', color: '#2D3728',
+                padding: '16px', borderRadius: '100px',
+                fontSize: '18px', fontWeight: '600', textDecoration: 'none',
+                border: '1px solid #F2EBE1', textAlign: 'center'
+              }}
+            >
+              Book in
+            </a>
+          </div>
         </div>
       )}
     </header>
