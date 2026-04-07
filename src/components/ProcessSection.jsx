@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
-import { motion, useInView } from ' Belle, Sparkles } from 'lucide-react'
-import AestheticSVG from './AestheticSVG.jsx'
+import { motion, useInView } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
+import AestheticSVG from './AestheticSVG.jsx'
 
 const steps = [
   {
