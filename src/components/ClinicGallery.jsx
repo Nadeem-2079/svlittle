@@ -62,26 +62,26 @@ export default function ClinicGallery() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section style={{ padding: '80px 24px', backgroundColor: '#F2EBE1' }}>
-      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+    <section id="gallery" style={{ padding: '80px 24px', backgroundColor: '#FFF9F0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         <motion.div ref={ref} initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={stagger}>
           
           <motion.div variants={fadeUp} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '20px' }}>
             <div>
               <span style={{ 
-                display: 'inline-block', backgroundColor: '#D8E1D3', color: '#3E4F39', 
-                fontSize: '11px', fontWeight: '500', padding: '6px 16px', borderRadius: '100px',
+                display: 'inline-block', backgroundColor: '#FFD6D6', color: '#991B1B', 
+                fontSize: '12px', fontWeight: '800', padding: '6px 16px', borderRadius: '100px',
                 marginBottom: '16px', letterSpacing: '0.05em', textTransform: 'uppercase'
               }}>Our Space</span>
               <h2 style={{
-                fontFamily: "'Instrument Serif', serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
-                color: '#2D3728', lineHeight: 1.1
+                fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                color: '#111827', lineHeight: 1.1, fontWeight: '800', textTransform: 'uppercase'
               }}>
-                A soothing environment <span style={{ fontStyle: 'italic', color: '#768A6A' }}>for growth.</span>
+                A soothing environment <span style={{ color: '#FF4D4D' }}>for growth.</span>
               </h2>
             </div>
-            <p style={{ fontSize: '14px', color: '#5B6C54', maxWidth: '320px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '15px', color: '#4B5563', maxWidth: '320px', lineHeight: 1.5 }}>
               Our clinic is designed to be a safe, engaging, and sensory-friendly space where your child feels completely at home.
             </p>
           </motion.div>
@@ -91,20 +91,20 @@ export default function ClinicGallery() {
             
             {/* Left Column */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <GalleryPlaceholder height="380px" color="#EAEFE4" index={1} src="/clinic1.jpg" />
+              <GalleryPlaceholder height="380px" color="#FFFFFF" index={1} src="/clinic1.jpg" />
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <GalleryPlaceholder height="240px" color="#D8E1D3" index={2} src="/clinic2.jpg" />
-                <GalleryPlaceholder height="240px" color="#E8EFE5" index={3} src="/clinic3.jpg" />
+                <GalleryPlaceholder height="240px" color="#FFF5F5" index={2} src="/clinic2.jpg" />
+                <GalleryPlaceholder height="240px" color="#FFFFFF" index={3} src="/clinic3.jpg" />
               </div>
             </div>
 
             {/* Right Column */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <GalleryPlaceholder height="240px" color="#E8EFE5" index={4} src="/clinic4.jpg" />
-                <GalleryPlaceholder height="240px" color="#D8E1D3" index={5} src="/clinic5.jpg" />
+                <GalleryPlaceholder height="240px" color="#FFFFFF" index={4} src="/clinic4.jpg" />
+                <GalleryPlaceholder height="240px" color="#FFF5F5" index={5} src="/clinic5.jpg" />
               </div>
-              <GalleryPlaceholder height="380px" color="#EAEFE4" index={6} src="/clinic6.jpg" />
+              <GalleryPlaceholder height="380px" color="#FFFFFF" index={6} src="/clinic6.jpg" />
             </div>
 
           </div>

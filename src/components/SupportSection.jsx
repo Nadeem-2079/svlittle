@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Home, BookOpen, Users, ClipboardCheck, Lightbulb, Heart, ArrowRight } from 'lucide-react'
+import { Home, BookOpen, Users, ClipboardCheck, Lightbulb, Heart, ArrowRight, Sparkles } from 'lucide-react'
+import AestheticSVG from './AestheticSVG.jsx'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -9,34 +10,34 @@ const fadeUp = {
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }
 
 const supports = [
-  { icon: <Home size={18} />, title: 'Home-based Programs', color: '#3E4F39', bg: '#D8E1D3' },
-  { icon: <BookOpen size={18} />, title: 'School Collaboration', color: '#2D3728', bg: '#EAEFE4' },
-  { icon: <Users size={18} />, title: 'Parent Coaching', color: '#F2EBE1', bg: '#4F634B' },
-  { icon: <ClipboardCheck size={18} />, title: 'Regular Progress Monitoring', color: '#3E4F39', bg: '#C5D0BC' },
-  { icon: <Lightbulb size={18} />, title: 'Sensory-Friendly Spaces', color: '#2D3728', bg: '#EAEFE4' },
-  { icon: <Heart size={18} />, title: 'Emotional Wellbeing', color: '#F2EBE1', bg: '#768A6A' },
+  { icon: <Home size={18} />, title: 'Home Based Support', color: '#DC2626', bg: '#FFFFFF' },
+  { icon: <BookOpen size={18} />, title: 'School Integration', color: '#111827', bg: '#FFD6D6' },
+  { icon: <Users size={18} />, title: 'Parent Training', color: '#FFF9F0', bg: '#DC2626' },
+  { icon: <ClipboardCheck size={18} />, title: 'Regular Progress', color: '#DC2626', bg: '#FFFFFF' },
+  { icon: <Lightbulb size={18} />, title: 'Sensory Guidance', color: '#111827', bg: '#FFD6D6' },
+  { icon: <Heart size={18} />, title: 'Emotional Health', color: '#FFF9F0', bg: '#991B1B' },
 ]
 
-function SupportCard({ item, index }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
+function SupportCard({ item }) {
   return (
     <div
       style={{
-        backgroundColor: item.bg, color: item.color, borderRadius: '24px', padding: '28px 24px',
+        backgroundColor: item.bg, color: item.color, borderRadius: '24px', padding: '32px 24px',
         display: 'flex', flexDirection: 'column', gap: '24px', flexShrink: 0,
-        position: 'relative', overflow: 'hidden', width: '240px', height: '180px'
+        position: 'relative', overflow: 'hidden', width: '220px', height: '180px',
+        boxShadow: item.bg === '#FFFFFF' ? '0 10px 30px rgba(0,0,0,0.03)' : 'none',
+        border: item.bg === '#FFFFFF' ? '1px solid #EADDCF' : 'none'
       }}
     >
       <div style={{
-        width: '36px', height: '36px', borderRadius: '50%',
+        width: '40px', height: '40px', borderRadius: '12px',
         backgroundColor: item.color, color: item.bg,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        opacity: 0.9
+        opacity: 0.95
       }}>
         {item.icon}
       </div>
-      <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', fontWeight: '500', lineHeight: 1.4, marginTop: 'auto', whiteSpace: 'normal' }}>
+      <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', fontWeight: '800', lineHeight: 1.4, marginTop: 'auto', letterSpacing: '0.01em' }}>
         {item.title}
       </h4>
     </div>
@@ -45,7 +46,7 @@ function SupportCard({ item, index }) {
 
 function AnimatedSection({ children, style }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
+  const inView = useInView(ref, { once: true, margin: '-40px' })
   return (
     <motion.div ref={ref} initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={stagger} style={style}>
       {children}
@@ -56,29 +57,46 @@ function AnimatedSection({ children, style }) {
 export default function SupportSection() {
   return (
     <section id="support" style={{
-      padding: '80px 0',
-      backgroundColor: '#E5ECE0',
-      borderRadius: '40px 40px 0 0', marginTop: '-40px', position: 'relative', zIndex: 10,
-      overflow: 'hidden', width: '100%'
+      padding: '120px 0 100px',
+      backgroundColor: '#FFF9F0',
+      position: 'relative', zIndex: 10,
+      overflow: 'hidden', width: '100%',
+      borderTop: '1px solid #FFD6D6'
     }}>
+      
+      {/* Rich Pediatric Aesthetic Layering */}
+      <AestheticSVG type="TEDDY" style={{ top: '5%', left: '2%', width: '150px' }} opacity={0.12} color="#DC2626" rotate={10} />
+      <AestheticSVG type="TOY_BLOCKS" style={{ top: '15%', right: '0%', width: '250px' }} opacity={0.08} color="#FFD6D6" />
+      <AestheticSVG type="ROCKET" style={{ bottom: '10%', right: '5%', width: '120px' }} opacity={0.15} color="#DC2626" rotate={-10} />
+      <AestheticSVG type="KIDS_HEART" style={{ bottom: '5%', left: '3%', width: '60px' }} opacity={0.2} color="#DC2626" />
+
       <div style={{ margin: '0 auto' }}>
-        <AnimatedSection style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <motion.h2 variants={fadeUp} style={{
-            fontFamily: "'Instrument Serif', serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
-            color: '#2D3728', marginBottom: '16px', lineHeight: 1.1
+        <AnimatedSection style={{ textAlign: 'center', marginBottom: '64px', padding: '0 24px' }}>
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            backgroundColor: '#FFD6D6', color: '#991B1B',
+            padding: '6px 20px', borderRadius: '100px',
+            fontSize: '11px', fontWeight: '800', letterSpacing: '0.1em',
+            textTransform: 'uppercase', marginBottom: '24px'
           }}>
-            Family-Centred <span style={{ fontStyle: 'italic' }}>Care</span>
+            <Sparkles size={14} fill="#991B1B" color="transparent" /> Holistic CARE
+          </span>
+          <motion.h2 variants={fadeUp} style={{
+            fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+            color: '#111827', marginBottom: '16px', lineHeight: 1.1, fontWeight: '800', textTransform: 'uppercase'
+          }}>
+            SUPPORTING THE <span style={{ color: '#DC2626' }}>WHOLE FAMILY</span>
           </motion.h2>
-          <motion.p variants={fadeUp} style={{ fontSize: '15px', color: '#5B6C54', maxWidth: '440px', margin: '0 auto', lineHeight: 1.6 }}>
-            Empowering parents to become the best advocates for their child's unique journey.
+          <motion.p variants={fadeUp} style={{ fontSize: '18px', color: '#4B5563', maxWidth: '500px', margin: '0 auto', lineHeight: 1.6 }}>
+            We provide the tools and training families need to support their child's progress outside the clinic environment.
           </motion.p>
         </AnimatedSection>
 
         <div style={{ overflow: 'hidden', width: '100%', display: 'flex', marginTop: '40px' }}>
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
-            style={{ display: 'flex', gap: '20px', minWidth: 'min-content', padding: '0 20px' }}
+            transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+            style={{ display: 'flex', gap: '20px', minWidth: 'min-content', padding: '0 10px' }}
           >
             {[...supports, ...supports].map((item, i) => (
               <SupportCard key={i} item={item} />
@@ -87,15 +105,18 @@ export default function SupportSection() {
         </div>
 
         {/* Action Banner */}
-        <AnimatedSection style={{ marginTop: '80px', display: 'flex', justifyContent: 'center' }}>
-          <motion.a variants={fadeUp} href="tel:+918110024552" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            backgroundColor: '#3E4F39', color: '#F2EBE1',
-            padding: '16px 32px', borderRadius: '100px',
-            fontSize: '13px', fontWeight: '500', textDecoration: 'none',
-            letterSpacing: '0.05em', textTransform: 'uppercase'
-          }}>
-            Contact Us Today <ArrowRight size={16} />
+        <AnimatedSection style={{ marginTop: '100px', display: 'flex', justifyContent: 'center', padding: '0 24px' }}>
+          <motion.a variants={fadeUp} href="#contact" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '12px',
+            backgroundColor: '#DC2626', color: '#FFF9F0',
+            padding: '20px 48px', borderRadius: '100px',
+            fontSize: '15px', fontWeight: '800', textDecoration: 'none',
+            letterSpacing: '0.1em', textTransform: 'uppercase', transition: 'all 0.3s',
+            boxShadow: '0 12px 30px rgba(220, 38, 38, 0.25)'
+          }}
+          onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#991B1B'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+          onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#DC2626'; e.currentTarget.style.transform = 'translateY(0)' }}>
+            Schedule A Consultation <ArrowRight size={20} />
           </motion.a>
         </AnimatedSection>
       </div>

@@ -14,10 +14,10 @@
   }
 
   body {
-    background-color: #F2EBE1;
-    /* Warm cream background from Soul */
-    color: #2D3728;
-    /* Deep olive/forest text */
+    background-color: #FFF9F0;
+    /* Warm cream baseline */
+    color: #111827;
+    /* Dark text */
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -44,32 +44,31 @@
   /* Organic Pill Shapes */
   .pill-organic {
     border-radius: 100px;
-    background-color: #4F634B;
-    color: #F2EBE1;
+    background-color: #FF4D4D;
+    color: #FFFFFF;
   }
 
   /* Soft solid backgrounds replacing gradients */
   .bg-primary-solid {
-    background-color: #4F634B;
-    /* Exact olive green button */
+    background-color: #FF4D4D;
+    /* Vibrant Red Button */
   }
 
   .bg-secondary-solid {
-    background-color: #C5D0BC;
-    /* Light sage green */
+    background-color: #FFD6D6;
+    /* Light Pink Red */
   }
 
   .bg-card-solid {
-    background-color: #D8E1D3;
-    /* Even lighter sage/pistachio */
+    background-color: #FFFFFF;
+    /* White Card bg */
   }
 
-  /* The image reference doesn't really use glassmorphism, it uses stark solid organic flat shapes */
+  /* Red theme flat card style */
   .card-organic {
-    background-color: #D8E1D3;
+    background-color: #FFFFFF;
     border-radius: 24px;
     border: none;
-    box-shadow: none;
-    /* The reference is flat, minimal shadow */
+    box-shadow: 0 4px 24px -4px rgba(255, 77, 77, 0.08);
   }
 }

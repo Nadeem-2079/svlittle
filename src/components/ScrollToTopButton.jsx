@@ -5,60 +5,41 @@ import { ArrowUp } from 'lucide-react'
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Show button when page is scrolled down
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 500) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      if (window.scrollY > 500) setIsVisible(true)
+      else setIsVisible(false)
     }
-
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.5, y: 20 }}
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.5, y: 20 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
+          exit={{ opacity: 0, scale: 0.8, y: 20 }}
+          whileHover={{ scale: 1.1, backgroundColor: '#991B1B' }} // Darker red on hover
+          whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
           style={{
-            position: 'fixed',
-            bottom: '40px',
-            right: '40px',
-            zIndex: 999,
-            width: '56px',
-            height: '56px',
-            borderRadius: '50%',
-            backgroundColor: '#3E4F39',
-            color: '#F2EBE1',
-            border: 'none',
-            outline: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.15)',
-            transition: 'background-color 0.2s',
+            position: 'fixed', bottom: '40px', right: '40px', zIndex: 1000,
+            width: '56px', height: '56px', borderRadius: '50%',
+            backgroundColor: '#DC2626', color: '#FFF9F0',
+            border: 'none', cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 10px 30px rgba(220, 38, 38, 0.3)',
+            transition: 'background-color 0.2s'
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#2D3728')}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#3E4F39')}
           aria-label="Scroll to top"
         >
-          <ArrowUp size={24} />
+          <ArrowUp size={24} strokeWidth={2.5} />
         </motion.button>
       )}
     </AnimatePresence>

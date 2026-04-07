@@ -1,148 +1,232 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { CheckCircle, Globe, MapPin, Heart, ArrowRight } from 'lucide-react'
+import { ArrowRight, Sparkles, ArrowUpRight, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import AestheticSVG from './AestheticSVG.jsx'
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
 }
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 }
 
-function AnimatedSection({ children, style, className }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
+function GridLine({ vertical, style }) {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={stagger}
-      style={style}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <div style={{
+      position: 'absolute',
+      backgroundColor: '#EADDCF', // Subtle divider
+      zIndex: 1,
+      ...(vertical ? { width: '1px', height: '100%', top: 0 } : { height: '1px', width: '100%', left: 0 }),
+      ...style
+    }} />
   )
 }
 
-const pills = [
-  { icon: <CheckCircle size={14} />, text: 'Evidence-based', color: '#4F634B', textColor: '#F2EBE1' },
-  { icon: <Globe size={14} />, text: 'Virtual & In-person', color: '#D8E1D3', textColor: '#2D3728' },
-  { icon: <MapPin size={14} />, text: 'Chennai, TN', color: '#A8B89F', textColor: '#2D3728' },
-  { icon: <Heart size={14} />, text: 'Family-centered', color: '#C5D0BC', textColor: '#2D3728' },
-]
-
 export default function HeroSection() {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-40px' })
+
   return (
-    <section style={{
+    <section id="home" ref={ref} style={{
       minHeight: '100vh',
-      backgroundColor: '#F2EBE1',
-      display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center',
-      padding: '140px 24px 80px',
+      backgroundColor: '#FFF9F0',
       position: 'relative', overflow: 'hidden',
       width: '100%',
+      padding: '0'
     }}>
-      
-      {/* Background SVGs */}
-      <AestheticSVG type="ARCH" style={{ top: '10%', right: '-5%', width: '450px' }} opacity={0.6} rotate={5} />
-      <AestheticSVG type="BLOB" style={{ bottom: '5%', left: '-10%', width: '550px' }} opacity={0.4} rotate={-10} />
-      <AestheticSVG type="STAR" style={{ top: '25%', left: '12%', width: '60px' }} opacity={0.5} rotate={30} scale={1.2} />
 
-      <div style={{ maxWidth: '1000px', width: '100%', margin: '0 auto', textAlign: 'center', zIndex: 10, position: 'relative' }}>
-        <AnimatedSection>
-          
-          <motion.div variants={fadeUp} style={{ marginBottom: '24px', display: 'flex', justifyContent: 'center' }}>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center',
-              backgroundColor: '#4F634B', color: '#F2EBE1',
-              padding: '8px 20px', borderRadius: '100px',
-              fontSize: '12px', fontWeight: '500', letterSpacing: '0.1em',
-              textTransform: 'uppercase', fontFamily: "'Inter', sans-serif"
+      {/* Background Decor */}
+      <AestheticSVG type="TEDDY" style={{ top: '10%', right: '5%', width: '350px' }} opacity={0.06} color="#DC2626" />
+      <AestheticSVG type="TOY_BLOCKS" style={{ bottom: '10%', left: '5%', width: '120px' }} opacity={0.06} color="#DC2626" />
+
+      {/* Structured Minimalist Grid Line - ONLY SLEEPING LINE */}
+      <GridLine style={{ top: '50%' }} />
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gridTemplateRows: '1fr 1fr',
+        height: '100vh',
+        width: '100%',
+        position: 'relative',
+        zIndex: 5
+      }} className="hero-quad-grid">
+
+        {/* 1. TOP LEFT: Structured Visual Hierarchy (Lowered to 170px) */}
+        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', paddingTop: '170px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'left' }} className="hero-content-quad">
+
+          {/* Main Headline */}
+          <motion.div variants={fadeUp} style={{ marginBottom: '16px', maxWidth: '420px' }}>
+            <h1 style={{
+              fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.8rem)',
+              lineHeight: 1.1, color: '#111827', fontWeight: '800',
+              letterSpacing: '-0.02em', textTransform: 'uppercase'
             }}>
-              Online & Offline Therapy
-            </span>
+              Every Child Has Potential
+            </h1>
+            <h1 style={{
+              fontFamily: "'Instrument Serif', serif", fontSize: 'clamp(3rem, 6vw, 4.5rem)',
+              lineHeight: 0.9, color: '#DC2626', fontWeight: '400', fontStyle: 'italic',
+              letterSpacing: '-0.01em'
+            }}>
+              We Help Unlock It
+            </h1>
           </motion.div>
 
-          {/* Corrected Headline */}
-          <div style={{ marginBottom: '40px' }}>
-            <motion.h1 variants={fadeUp} style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: 'clamp(4rem, 9vw, 7.5rem)',
-              lineHeight: 0.95, color: '#2D3728',
-              marginBottom: '10px', fontWeight: '400',
-              letterSpacing: '-0.03em',
-            }}>
-              Help your child
-            </motion.h1>
-            <motion.h1 variants={fadeUp} style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: 'clamp(4rem, 9vw, 7.5rem)',
-              lineHeight: 0.95, color: '#4F634B',
-              marginBottom: '0', fontWeight: '400', fontStyle: 'italic',
-              letterSpacing: '-0.03em',
-            }}>
-              reach their potential.
-            </motion.h1>
-          </div>
-
-          {/* RESTORED Turn 11 Content */}
+          {/* High-Contrast Signature Line */}
           <motion.p variants={fadeUp} style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '18px', color: '#5B6C54',
-            maxWidth: '650px', margin: '0 auto 40px',
-            lineHeight: 1.6, fontWeight: '400',
+            fontSize: '22px', color: '#111827', fontWeight: '800',
+            marginBottom: '24px', lineHeight: 1.2, maxWidth: '400px'
           }}>
-            Welcome to SV Little Leapsters Therapy Centre, where we provide comprehensive speech and occupational therapy services for individuals of all ages. Our compassionate team takes a holistic approach, blending evidence-based techniques, emotional support, and lifestyle education.
+            Helping Your Child Find Their Voice
           </motion.p>
 
-          {/* RESTORED Turn 11 Content - Holistic Boxes */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginBottom: '48px' }}>
-            {['Evidence-based techniques', 'Emotional support', 'Lifestyle education'].map((item, idx) => (
-              <motion.div key={item} variants={fadeUp} style={{
-                backgroundColor: 'rgba(79, 99, 75, 0.05)', padding: '16px', borderRadius: '16px',
-                border: '1px solid rgba(79, 99, 75, 0.1)', fontSize: '14px', color: '#3E4F39', fontWeight: '500'
-              }}>
-                {item}
-              </motion.div>
-            ))}
-          </div>
+          {/* Delicate Mission Tagline */}
+          <motion.div variants={fadeUp} style={{ marginBottom: '44px', maxWidth: '380px' }}>
+            <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, fontWeight: '500', opacity: 0.9 }}>
+              Small Steps Today, Big Confidence Tomorrow. Because Every Child Deserves to Shine.
+            </p>
+          </motion.div>
 
-          <motion.p variants={fadeUp} style={{ fontSize: '15px', color: '#768A6A', marginBottom: '40px' }}>
-            We create personalized treatment plans tailored to each individual.
-          </motion.p>
-
-          <motion.div variants={fadeUp} style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <motion.div variants={fadeUp}>
             <Link to="/#contact" style={{
-              backgroundColor: '#4F634B', color: '#F2EBE1',
-              padding: '16px 40px', borderRadius: '100px',
-              fontSize: '14px', fontWeight: '600', textDecoration: 'none',
-              letterSpacing: '0.08em', textTransform: 'uppercase',
-              border: '1px solid #4F634B', display: 'flex', alignItems: 'center', gap: '10px'
+              backgroundColor: '#DC2626', color: '#FFF9F0',
+              padding: '16px 36px', borderRadius: '100px',
+              fontSize: '14px', fontWeight: '800', textDecoration: 'none',
+              letterSpacing: '0.05em', textTransform: 'uppercase',
+              display: 'inline-flex', alignItems: 'center', gap: '10px',
+              boxShadow: '0 8px 16px rgba(220, 38, 38, 0.15)', transition: 'all 0.3s'
             }}
-              onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#3E4F39' }}
-              onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#4F634B' }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
             >
-              Book Consultation <ArrowRight size={18} />
+              Book a Appointment <ArrowRight size={18} />
             </Link>
-            <a href="#services" style={{
-              backgroundColor: '#F2EBE1', color: '#3E4F39',
-              padding: '16px 40px', borderRadius: '100px',
-              fontSize: '14px', fontWeight: '600', textDecoration: 'none',
-              letterSpacing: '0.08em', textTransform: 'uppercase',
-              border: '1px solid #C5D0BC'
-            }}>
-              Our Services
+          </motion.div>
+        </motion.div>
+
+        {/* 2. TOP RIGHT */}
+        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', paddingTop: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', textAlign: 'right' }} className="hero-stat-quad">
+          {/* Content Removed as per Prior Request */}
+        </motion.div>
+
+        {/* 3. BOTTOM LEFT */}
+        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'left' }} className="hero-social-quad">
+          {/* Space intentionally left blank for a more minimalist feel */}
+        </motion.div>
+
+        {/* 4. BOTTOM RIGHT: Streamlined Stats */}
+        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', paddingBottom: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', textAlign: 'right' }} className="hero-experience-quad">
+          <motion.div variants={fadeUp} style={{ marginBottom: '40px' }}>
+            <div style={{ fontSize: '56px', fontWeight: '800', color: '#111827', lineHeight: 1 }}>6+ Years</div>
+            <div style={{ fontSize: '13px', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.12em', marginTop: '8px', fontWeight: '800' }}>Of Experience</div>
+          </motion.div>
+        </motion.div>
+
+        {/* CENTRAL CIRCLE Focal Point */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '480px',
+          height: '480px',
+          zIndex: 20,
+          pointerEvents: 'none'
+        }} className="central-focal">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '50%', // PERFECT CIRCLE
+              backgroundColor: '#FFFFFF',
+              border: '1px solid rgba(220, 38, 38, 0.12)',
+              boxShadow: '0 40px 100px rgba(0,0,0,0.12)',
+              overflow: 'hidden',
+              position: 'relative',
+              pointerEvents: 'auto'
+            }}
+          >
+            <img
+              src="/homesv.png"
+              alt="Therapy Clinic"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+            {/* Contrast Overlay */}
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(220, 38, 38, 0.05), transparent)' }} />
+          </motion.div>
+
+          {/* Overlapping Circle Action Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, x: 20 }}
+            animate={inView ? { opacity: 1, scale: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            style={{
+              position: 'absolute',
+              bottom: '15%',
+              right: '25px',
+              zIndex: 30,
+              pointerEvents: 'auto'
+            }}
+          >
+            <a href="#gallery" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'inherit', textDecoration: 'none', width: '100px', height: '100px', borderRadius: '50%', backgroundColor: '#DC2626', boxShadow: '0 15px 40px rgba(220, 38, 38, 0.4)' }}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#991B1B'}
+              onMouseLeave={e => e.currentTarget.style.backgroundColor = '#DC2626'}>
+              <ArrowUpRight size={56} strokeWidth={2.5} color="#FFF9F0" />
             </a>
           </motion.div>
-        </AnimatedSection>
+        </div>
+
       </div>
+
+      <style>{`
+        @media (max-width: 1280px) {
+           .central-focal { width: 420px !important; height: 420px !important; }
+        }
+        @media (max-width: 1200px) {
+          .hero-quad-grid { padding: 0 !important; }
+          div[style*="padding: '0 80px'"] { padding: 40px !important; }
+        }
+        @media (max-width: 900px) {
+          .hero-quad-grid { 
+            display: flex !important; 
+            flex-direction: column !important; 
+            height: auto !important; 
+            padding-top: 100px !important;
+          }
+          .hero-content-quad { 
+            padding: 40px 24px !important; 
+            text-align: center !important; 
+            align-items: center !important; 
+            order: 1 !important; 
+            border: none !important;
+          }
+          .central-focal { 
+            position: relative !important; 
+            transform: none !important; 
+            margin: 40px auto !important; 
+            top: auto !important;
+            left: auto !important;
+            width: 320px !important; 
+            height: 320px !important; 
+            order: 2 !important; 
+          }
+          .hero-experience-quad {
+            order: 3 !important;
+            padding: 40px 24px !important;
+            text-align: center !important;
+            align-items: center !important;
+          }
+          .hero-stat-quad, .hero-social-quad { display: none !important; }
+        }
+      `}</style>
     </section>
   )
 }
