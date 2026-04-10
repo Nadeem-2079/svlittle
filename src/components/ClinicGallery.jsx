@@ -12,14 +12,14 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 }
 
-// Aesthetic Placeholder Block / Image Container
-function GalleryPlaceholder({ height, color, index, src }) {
+function GalleryPlaceholder({ height, color, index, src, label }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, scale: 0.95 }}
+      whileHover={{ y: -8 }}
       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       style={{
@@ -29,30 +29,33 @@ function GalleryPlaceholder({ height, color, index, src }) {
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
         padding: '24px', textAlign: 'center', color: '#3E4F39',
-        border: '1px solid #C5D0BC',
-        position: 'relative', overflow: 'hidden'
+        border: '1px solid #EADDCF',
+        position: 'relative', overflow: 'hidden',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
       }}
     >
       <img 
         src={src} 
-        alt={`Clinic Space ${index}`} 
+        alt={label || `Clinic Space ${index}`} 
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover'
         }}
         onError={(e) => {
           e.target.style.display = 'none';
           e.target.nextSibling.style.display = 'flex';
+          e.target.nextSibling.nextSibling.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
         }}
       />
       <div style={{
-        display: 'none', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
+        display: 'none', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 2
       }}>
-        {/* Soft icon in the absolute center */}
         <ImageIcon size={32} opacity={0.3} style={{ marginBottom: '12px' }} />
-        <span style={{ fontSize: '13px', fontWeight: '500', opacity: 0.6 }}>
-          Add {src}
+        <span style={{ fontSize: '12px', fontWeight: '500', opacity: 0.6 }}>
+          {label}
         </span>
       </div>
+      
+      {/* Label Overlay removed as per request */}
     </motion.div>
   )
 }
@@ -67,22 +70,27 @@ export default function ClinicGallery() {
         
         <motion.div ref={ref} initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={stagger}>
           
-          <motion.div variants={fadeUp} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '20px' }}>
-            <div>
-              <span style={{ 
-                display: 'inline-block', backgroundColor: '#FFD6D6', color: '#991B1B', 
-                fontSize: '12px', fontWeight: '800', padding: '6px 16px', borderRadius: '100px',
-                marginBottom: '16px', letterSpacing: '0.05em', textTransform: 'uppercase'
-              }}>Our Space</span>
-              <h2 style={{
-                fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
-                color: '#111827', lineHeight: 1.1, fontWeight: '800', textTransform: 'uppercase'
-              }}>
-                A soothing environment <span style={{ color: '#FF4D4D' }}>for growth.</span>
-              </h2>
-            </div>
-            <p style={{ fontSize: '15px', color: '#4B5563', maxWidth: '320px', lineHeight: 1.5 }}>
-              Our clinic is designed to be a safe, engaging, and sensory-friendly space where your child feels completely at home.
+          <motion.div variants={fadeUp} style={{ 
+            display: 'flex', 
+            flexDirection: 'column',
+            alignItems: 'center', 
+            textAlign: 'center',
+            marginBottom: '64px', 
+            gap: '16px' 
+          }}>
+            <span style={{ 
+              display: 'inline-block', backgroundColor: '#FFD6D6', color: '#991B1B', 
+              fontSize: '12px', fontWeight: '800', padding: '6px 16px', borderRadius: '100px',
+              letterSpacing: '0.05em', textTransform: 'uppercase'
+            }}>The Clinic</span>
+            <h2 style={{
+              fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+              color: '#111827', lineHeight: 1.1, fontWeight: '800', textTransform: 'uppercase'
+            }}>
+              Where comfort meets <span style={{ color: '#DC2626' }}>clinical excellence.</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: '#4B5563', maxWidth: '600px', lineHeight: 1.6 }}>
+              Step inside our purpose-built facility in Mogappair West—a sensory-friendly, secure, and vibrant haven designed to maximize every therapeutic milestone.
             </p>
           </motion.div>
 

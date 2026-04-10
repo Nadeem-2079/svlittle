@@ -232,12 +232,12 @@ export default function HeroSection() {
           { num: '2022', label: 'Established' },
           { num: '4.9/5', label: 'Trust Score' },
         ].map((stat, i) => (
-          <motion.div 
-            key={i} 
+          <motion.div
+            key={i}
             whileHover={{ y: -5 }}
-            style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
               backgroundColor: '#FFFFFF',
               padding: '12px 24px',
               borderRadius: '20px',
