@@ -4,7 +4,9 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import HomePage from './pages/HomePage.jsx'
 import CareersPage from './pages/CareersPage.jsx'
+import ContactPage from './pages/ContactPage.jsx'
 import ScrollToTopButton from './components/ScrollToTopButton.jsx'
+import { MessageCircle } from 'lucide-react'
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -33,6 +35,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/careers" element={<CareersPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>
         <Footer />

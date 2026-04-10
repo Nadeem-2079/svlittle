@@ -7,7 +7,6 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/#services' },
   { name: 'About', path: '/#about' },
-  { name: 'Careers', path: '/careers' },
 ]
 
 export default function Header() {
@@ -88,7 +87,7 @@ export default function Header() {
 
         {/* RIGHT: BUTTONS */}
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'flex-end', alignItems: 'center' }}>
-          <a href="https://wa.me/918110024552" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+          <a href="#contact" style={{ textDecoration: 'none' }}>
             <button style={{
               backgroundColor: 'transparent', color: '#111827', border: '1px solid #DC2626',
               padding: '10px 24px', borderRadius: '100px', fontSize: '12px', fontWeight: '800',
@@ -97,16 +96,16 @@ export default function Header() {
               Contact
             </button>
           </a>
-          <Link to="/#contact" style={{ textDecoration: 'none' }}>
+          <a href="#contact" style={{ textDecoration: 'none' }}>
             <button style={{
               backgroundColor: '#DC2626', color: '#FFF9F0', border: 'none',
               padding: '10px 24px', borderRadius: '100px', fontSize: '12px', fontWeight: '800',
               textTransform: 'uppercase', letterSpacing: '0.08em', cursor: 'pointer',
               boxShadow: '0 4px 12px rgba(220, 38, 38, 0.12)', transition: 'all 0.3s'
             }} onMouseEnter={e => e.target.style.transform = 'translateY(-2px)'} onMouseLeave={e => e.target.style.transform = 'translateY(0)'}>
-              Book a Appointment
+              Book a Consultation
             </button>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -178,22 +177,22 @@ export default function Header() {
 
               {/* Action Buttons: Shifted Up from the absolute bottom */}
               <motion.div variants={itemVariants} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <a href="https://wa.me/918110024552" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <a href="tel:+918110024552" style={{ textDecoration: 'none' }}>
                   <button style={{
                     width: '100%', backgroundColor: 'transparent', color: '#111827', border: '1px solid #DC2626',
                     padding: '16px', borderRadius: '12px', fontSize: '13px', fontWeight: '800', textTransform: 'uppercase'
                   }}>
-                    WhatsApp
+                    Call Now
                   </button>
                 </a>
-                <Link to="/#contact" style={{ textDecoration: 'none' }}>
+                <a href="#contact" style={{ textDecoration: 'none' }}>
                   <button style={{
                     width: '100%', backgroundColor: '#DC2626', color: '#FFF9F0', border: 'none',
                     padding: '16px', borderRadius: '12px', fontSize: '13px', fontWeight: '800', textTransform: 'uppercase'
                   }}>
-                    Book a Appointment
+                    Book a Consultation
                   </button>
-                </Link>
+                </a>
               </motion.div>
             </motion.div>
           </>

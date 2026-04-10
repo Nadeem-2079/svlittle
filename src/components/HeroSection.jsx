@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ArrowRight, Sparkles, ArrowUpRight, Star } from 'lucide-react'
+import { ArrowRight, Sparkles, ArrowUpRight, Star, MessageSquare, Activity, BookOpen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import AestheticSVG from './AestheticSVG.jsx'
 
@@ -66,31 +66,25 @@ export default function HeroSection() {
               lineHeight: 1.1, color: '#111827', fontWeight: '800',
               letterSpacing: '-0.02em', textTransform: 'uppercase'
             }}>
-              Every Child Has Potential
+              Your Child Can —
             </h1>
             <h1 style={{
               fontFamily: "'Instrument Serif', serif", fontSize: 'clamp(3rem, 6vw, 4.5rem)',
               lineHeight: 0.9, color: '#DC2626', fontWeight: '400', fontStyle: 'italic',
               letterSpacing: '-0.01em'
             }}>
-              We Help Unlock It
+              We Help Them Show It
             </h1>
           </motion.div>
 
-          {/* High-Contrast Signature Line */}
           <motion.p variants={fadeUp} style={{
-            fontSize: '22px', color: '#111827', fontWeight: '800',
-            marginBottom: '24px', lineHeight: 1.2, maxWidth: '400px'
+            fontSize: '18px', color: '#4B5563', fontWeight: '500',
+            marginBottom: '32px', lineHeight: 1.4, maxWidth: '400px'
           }}>
-            Helping Your Child Find Their Voice
+            All under one roof in Mogappair, Chennai.
           </motion.p>
 
           {/* Delicate Mission Tagline */}
-          <motion.div variants={fadeUp} style={{ marginBottom: '44px', maxWidth: '380px' }}>
-            <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, fontWeight: '500', opacity: 0.9 }}>
-              Small Steps Today, Big Confidence Tomorrow. Because Every Child Deserves to Shine.
-            </p>
-          </motion.div>
 
           <motion.div variants={fadeUp}>
             <Link to="/#contact" style={{
@@ -104,14 +98,43 @@ export default function HeroSection() {
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
             >
-              Book a Appointment <ArrowRight size={18} />
+              Book a Consultation <ArrowRight size={18} />
             </Link>
           </motion.div>
         </motion.div>
 
         {/* 2. TOP RIGHT */}
-        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', paddingTop: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', textAlign: 'right' }} className="hero-stat-quad">
-          {/* Content Removed as per Prior Request */}
+        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', paddingTop: '170px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', textAlign: 'right' }} className="hero-stat-quad">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '300px' }}>
+            {[
+              { title: 'Speech Therapy', icon: <MessageSquare size={16} /> },
+              { title: 'Occupational Therapy', icon: <Activity size={16} /> },
+              { title: 'Special Education', icon: <BookOpen size={16} /> }
+            ].map((s, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeUp}
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  padding: '16px 24px',
+                  borderRadius: '16px',
+                  border: '1px solid rgba(220, 38, 38, 0.1)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  color: '#111827',
+                  fontWeight: '700',
+                  fontSize: '14px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                <div style={{ color: '#DC2626' }}>{s.icon}</div>
+                {s.title}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* 3. BOTTOM LEFT */}
@@ -119,12 +142,9 @@ export default function HeroSection() {
           {/* Space intentionally left blank for a more minimalist feel */}
         </motion.div>
 
-        {/* 4. BOTTOM RIGHT: Streamlined Stats */}
-        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', paddingBottom: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', textAlign: 'right' }} className="hero-experience-quad">
-          <motion.div variants={fadeUp} style={{ marginBottom: '40px' }}>
-            <div style={{ fontSize: '56px', fontWeight: '800', color: '#111827', lineHeight: 1 }}>6+ Years</div>
-            <div style={{ fontSize: '13px', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.12em', marginTop: '8px', fontWeight: '800' }}>Of Experience</div>
-          </motion.div>
+        {/* 4. BOTTOM RIGHT: Space Cleared for Bottom Bar */}
+        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={fadeUp} style={{ padding: '0 80px', paddingBottom: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', textAlign: 'right' }} className="hero-experience-quad">
+          {/* Stats moved to bottom bar */}
         </motion.div>
 
         {/* CENTRAL CIRCLE Focal Point */}
@@ -186,6 +206,46 @@ export default function HeroSection() {
 
       </div>
 
+      {/* FULL LENGTH TRUST BAR */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        style={{
+          position: 'absolute',
+          bottom: '24px',
+          left: '24px',
+          right: '24px',
+          backgroundColor: '#FFFFFF',
+          border: '1px solid #EADDCF',
+          borderRadius: '24px',
+          padding: '24px 60px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          zIndex: 40,
+          boxShadow: '0 20px 50px rgba(0,0,0,0.06)'
+        }}
+        className="hero-trust-bar"
+      >
+        {[
+          { num: '3', label: 'Therapy Services' },
+          { num: '6+', label: 'Years Experience' },
+          { num: '7', label: 'Verified Reviews' },
+          { num: '2022', label: 'Established' },
+          { num: '4.9/5', label: 'Trust Score' },
+          { num: '✓', label: 'Specialized Intervention' }
+        ].map((stat, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span style={{ fontSize: '24px', fontWeight: '900', color: '#111827', lineHeight: 1 }}>{stat.num}</span>
+              <span style={{ fontSize: '11px', fontWeight: '800', color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '4px' }}>{stat.label}</span>
+            </div>
+            {i < 5 && <div style={{ height: '30px', width: '1px', backgroundColor: '#EADDCF', marginLeft: '40px' }} className="stat-divider" />}
+          </div>
+        ))}
+      </motion.div>
+
       <style>{`
         @media (max-width: 1280px) {
            .central-focal { width: 420px !important; height: 420px !important; }
@@ -208,23 +268,42 @@ export default function HeroSection() {
             order: 1 !important; 
             border: none !important;
           }
+          .hero-stat-quad { 
+            display: flex !important; 
+            padding: 24px !important; 
+            align-items: center !important; 
+            order: 2 !important; 
+          }
+          .hero-stat-quad div {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+            gap: 12px !important;
+            width: 100% !important;
+            max-width: none !important;
+          }
+          .hero-stat-quad div div { width: auto !important; padding: 12px !important; }
           .central-focal { 
             position: relative !important; 
             transform: none !important; 
             margin: 40px auto !important; 
             top: auto !important;
             left: auto !important;
-            width: 320px !important; 
-            height: 320px !important; 
-            order: 2 !important; 
+            width: 300px !important; 
+            height: 300px !important; 
+            order: 3 !important; 
           }
           .hero-experience-quad {
-            order: 3 !important;
-            padding: 40px 24px !important;
-            text-align: center !important;
-            align-items: center !important;
+            display: none !important;
           }
-          .hero-stat-quad, .hero-social-quad { display: none !important; }
+          .hero-trust-bar {
+            position: relative !important;
+            padding: 40px 24px !important;
+            flex-direction: column !important;
+            gap: 32px !important;
+            border-top: 1px solid #FFD6D6 !important;
+          }
+          .stat-divider { display: none !important; }
+          .hero-social-quad { display: none !important; }
         }
       `}</style>
     </section>

@@ -14,16 +14,16 @@ const services = [
   {
     icon: <MessageSquare size={24} />,
     title: 'Speech Therapy',
-    hook: "When words don't come easy we help find them.",
-    desc: "We help children and adults speak clearly express themselves and communicate with confidence. Whether your child is late to talk hard to understand or struggles with stuttering we have a plan for them.",
-    meta: ["All age groups", "40 min sessions"],
+    hook: "When words don't come easy, we help find them.",
+    desc: "We help children and adults speak clearly, express themselves, and communicate with confidence. Whether your child is late to talk, hard to understand, or struggles with stuttering we have a plan for them.",
+    meta: ["Speech & Language", "Articulation", "Stuttering / Fluency", "40 min sessions"],
     color: '#DC2626'
   },
   {
     icon: <Hand size={24} />,
     title: 'Occupational Therapy',
     hook: "Small hands. Big milestones. We help get there.",
-    desc: "We help children build the everyday skills that school and life demand writing, focusing getting dressed handling emotions and more. If your child struggles with coordination or daily tasks OT can help.",
+    desc: "We help children build the everyday skills that school and life demand — writing, focusing, getting dressed, handling emotions, and more. If your child struggles with coordination or daily tasks, Occupational Therapy can help.",
     meta: ["Children (Pediatric)", "40 min sessions"],
     color: '#DC2626'
   },
@@ -31,7 +31,7 @@ const services = [
     icon: <BookOpen size={24} />,
     title: 'Special Education',
     hook: "Every child learns differently. We teach their way.",
-    desc: "Our special educator works one-on-one with children who need a different kind of learning customized lessons, patience and a plan built just for them. We also work closely with parents and school teachers so progress continues everywhere.",
+    desc: "We work one-on-one with children who need a different kind of learning — customized lessons, patience, and a plan built just for them.",
     meta: ["Children and teenagers", "40 min sessions"],
     color: '#DC2626'
   }
@@ -150,10 +150,10 @@ export default function ServicesGrid() {
             fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
             color: '#111827', marginBottom: '16px', lineHeight: 1.1, fontWeight: '800', textTransform: 'uppercase'
           }}>
-            OUR CLINICAL <span style={{ color: '#DC2626' }}>SERVICES</span>
+            What <span style={{ color: '#DC2626' }}>We Do</span>
           </motion.h2>
           <motion.p variants={fadeUp} style={{ fontSize: '18px', color: '#4B5563', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
-            Expert care tailored to every child's unique development path.
+            Three specialist services. One caring team. One convenient location.
           </motion.p>
         </motion.div>
 

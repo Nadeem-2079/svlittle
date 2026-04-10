@@ -44,7 +44,7 @@ export default function ContactSection() {
             fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.8rem, 5vw, 4rem)',
             color: '#111827', marginBottom: '16px', lineHeight: 1.1, letterSpacing: '-0.02em', fontWeight: '800', textTransform: 'uppercase'
           }}>
-            LET'S START THE <span style={{ color: '#DC2626' }}>CONVERSATION</span>
+            LET'S TALK ABOUT <span style={{ color: '#DC2626' }}>YOUR CHILD</span>
           </h2>
           <p style={{ fontSize: '18px', color: '#4B5563', maxWidth: '580px', margin: '0 auto', lineHeight: 1.6 }}>
             Whether you are looking for an initial consultation or simply have a few questions, our team is here to listen and help.
@@ -71,12 +71,12 @@ export default function ContactSection() {
               </h3>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
-                <a href="https://wa.me/918110024552" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', gap: '20px', textDecoration: 'none' }}>
+                <a href="tel:+918110024552" style={{ display: 'flex', gap: '20px', textDecoration: 'none' }}>
                   <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: '#FFD6D6', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#991B1B', flexShrink: 0 }}>
                     <Phone size={22} fill="#991B1B" color="transparent" />
                   </div>
                   <div>
-                    <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#6B7280', marginBottom: '4px', fontWeight: '700' }}>WhatsApp Us</div>
+                    <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#6B7280', marginBottom: '4px', fontWeight: '700' }}>Call Us</div>
                     <div style={{ fontSize: '18px', color: '#111827', fontWeight: '700' }}>+91 81100 24552</div>
                   </div>
                 </a>
@@ -133,7 +133,7 @@ export default function ContactSection() {
               minHeight: '260px', position: 'relative', border: '1px solid #FFD6D6' 
             }}>
               <iframe 
-                src="https://maps.google.com/maps?q=Mogappair+West,+Chennai&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                src="https://maps.google.com/maps?q=595,%201st%20Block,%20Valliammai%20Street,%20Mogappair%20West,%20Chennai&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0, minHeight: '260px' }} 
@@ -166,7 +166,7 @@ export default function ContactSection() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }} className="form-row">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <label style={{ fontSize: '12px', color: '#FFF9F0', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: '800', opacity: 0.9 }}>Your Name</label>
-                  <input type="text" placeholder="Sarah Smith" style={{
+                  <input type="text" placeholder="Your Name" style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.3)',
                     borderRadius: '16px', padding: '18px 24px', color: '#FFF9F0', fontSize: '16px', outline: 'none', transition: 'all 0.3s'
                   }}
@@ -176,7 +176,7 @@ export default function ContactSection() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <label style={{ fontSize: '12px', color: '#FFF9F0', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: '800', opacity: 0.9 }}>Email Address</label>
-                  <input type="email" placeholder="sarah@example.com" style={{
+                  <input type="email" placeholder="example@email.com" style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.3)',
                     borderRadius: '16px', padding: '18px 24px', color: '#FFF9F0', fontSize: '16px', outline: 'none', transition: 'all 0.3s'
                   }}

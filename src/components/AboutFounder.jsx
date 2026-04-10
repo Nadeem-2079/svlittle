@@ -8,7 +8,7 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.12 } }
 const credentials = [
   { icon: <GraduationCap size={16} />, label: 'Master of Audiology & Speech Language Pathology (MASLP)' },
   { icon: <Award size={16} />, label: 'Registered with Rehabilitation Council of India (RCI)' },
-  { icon: <Heart size={16} />, label: '10+ years of dedicated clinical experience' },
+  { icon: <Heart size={16} />, label: '6+ years of dedicated clinical experience' },
   { icon: <CheckCircle size={16} />, label: 'Certified in Sensory Integration Therapy' },
 ]
 
@@ -44,14 +44,33 @@ export default function AboutFounder() {
           </span>
           <h2 style={{
             fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
-            color: '#111827', marginBottom: '16px', lineHeight: 1.1, fontWeight: '800', textTransform: 'uppercase'
+            color: '#111827', marginBottom: '16px', lineHeight: 1.1, fontWeight: '800', 
+            textTransform: 'uppercase', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px'
           }}>
-            ABOUT OUR <span style={{ color: '#DC2626' }}>FOUNDER</span>
+            ABOUT <img src="/web logo.png" alt="SV Little Leapsters" style={{ height: '70px', objectFit: 'contain' }} />
           </h2>
           <p style={{ fontSize: '18px', color: '#4B5563', maxWidth: '650px', margin: '0 auto', lineHeight: 1.6 }}>
-            We believe every child has potential. Our job is to help them reach it.
+            We combine 6+ years of clinical experience with family-centered care to create an environment where every child finds their voice.
           </p>
         </motion.div>
+ 
+        <div style={{ marginBottom: '80px', padding: '60px', backgroundColor: '#FFFFFF', borderRadius: '40px', border: '1px solid #FFD6D6', boxShadow: '0 20px 50px rgba(0,0,0,0.05)', position: 'relative', overflow: 'hidden' }}>
+          <AestheticSVG type="TEDDY" style={{ top: '-40px', left: '-40px', width: '200px' }} opacity={0.05} color="#DC2626" />
+          <div style={{ position: 'relative', zIndex: 10 }}>
+            <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '32px', fontWeight: '800', color: '#111827', marginBottom: '32px', textTransform: 'uppercase' }}>Our Origin <span style={{ color: '#DC2626' }}>Story</span></h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }} className="origin-grid">
+              <p style={{ fontSize: '17px', color: '#4B5563', lineHeight: 1.8, marginBottom: 0 }}>
+                SV Little Leapsters started from home with one therapist, one family, and a lot of trust. Vasanthi was travelling daily for sessions when an unexpected fall forced her to stop. 
+                Her husband set up a Google listing. They forgot to add the phone number. Three months later — dozens of parents had already been searching. That moment was the beginning.
+              </p>
+              <div style={{ backgroundColor: '#FFF9F0', padding: '40px', borderRadius: '24px', border: '1px dashed #DC2626' }}>
+                <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: '24px', color: '#DC2626', fontStyle: 'italic', lineHeight: 1.3 }}>
+                  "What started as a small step from home has grown into a leap of faith for hundreds of families."
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <motion.div
           ref={ref}
@@ -105,7 +124,7 @@ export default function AboutFounder() {
               </div>
 
               <p style={{ fontSize: '17px', color: '#FFD6D6', lineHeight: 1.8, marginBottom: '48px', opacity: 0.95 }}>
-                Our vision is to provide every child with a voice. By combining 10+ years of clinical insight with family-centered care, we create an environment where communication breakthroughs happen every single day.
+                By combining 6+ years of clinical experience with family-centered care, we create an environment where every child finds their voice.
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', marginBottom: '56px' }}>
@@ -149,6 +168,10 @@ export default function AboutFounder() {
       <style>{`
         @media (max-width: 1024px) {
           .founder-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 768px) {
+          .origin-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          div[style*="padding: '60px'"] { padding: 40px 24px !important; }
         }
       `}</style>
     </section>

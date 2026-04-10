@@ -6,8 +6,8 @@ import AestheticSVG from './AestheticSVG.jsx'
 const steps = [
   {
     num: 1,
-    title: 'Book a Appointment',
-    desc: 'Complete the simple form on our contact page or call us directly to schedule a convenient time.'
+    title: 'Book a Consultation',
+    desc: 'Call us at 81100 24552 or fill out our contact form. We will schedule a time that works for you.'
   },
   {
     num: 2,
@@ -77,7 +77,7 @@ export default function ProcessSection() {
             margin: '0 auto',
             maxWidth: '800px'
           }}>
-            EMPOWERING <span style={{ color: '#DC2626' }}>EVERY STEP</span> FORWARD
+            HOW WE WORK <span style={{ color: '#DC2626' }}>WITH YOUR CHILD</span>
           </h2>
         </motion.div>
 
@@ -206,7 +206,7 @@ export default function ProcessSection() {
           }}
           onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#991B1B'; e.currentTarget.style.transform = 'translateY(-2px)' }}
           onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#DC2626'; e.currentTarget.style.transform = 'translateY(0)' }}>
-            Book a Appointment
+            Book a Consultation
           </a>
         </div>
       </div>

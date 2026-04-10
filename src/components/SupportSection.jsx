@@ -104,21 +104,6 @@ export default function SupportSection() {
           </motion.div>
         </div>
 
-        {/* Action Banner */}
-        <AnimatedSection style={{ marginTop: '100px', display: 'flex', justifyContent: 'center', padding: '0 24px' }}>
-          <motion.a variants={fadeUp} href="#contact" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '12px',
-            backgroundColor: '#DC2626', color: '#FFF9F0',
-            padding: '20px 48px', borderRadius: '100px',
-            fontSize: '15px', fontWeight: '800', textDecoration: 'none',
-            letterSpacing: '0.1em', textTransform: 'uppercase', transition: 'all 0.3s',
-            boxShadow: '0 12px 30px rgba(220, 38, 38, 0.25)'
-          }}
-          onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#991B1B'; e.currentTarget.style.transform = 'translateY(-2px)' }}
-          onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#DC2626'; e.currentTarget.style.transform = 'translateY(0)' }}>
-            Schedule A Consultation <ArrowRight size={20} />
-          </motion.a>
-        </AnimatedSection>
       </div>
     </section>
   )

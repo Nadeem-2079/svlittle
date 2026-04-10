@@ -7,8 +7,7 @@ const links = {
   services: [
     { name: 'Speech Therapy', path: '/#services' },
     { name: 'Occupational Therapy', path: '/#services' },
-    { name: 'Feeding Therapy', path: '/#services' },
-    { name: 'Sensory Integration', path: '/#services' }
+    { name: 'Special Education', path: '/#services' }
   ],
   center: [
     { name: 'About Our Story', path: '/#about' },
@@ -58,12 +57,15 @@ export default function Footer() {
               <Link to="/">
                 <img src="/web logo.png" alt="Logo" style={{ height: '80px', objectFit: 'contain' }} />
               </Link>
+              <div style={{ marginTop: '12px', fontSize: '13px', fontWeight: '800', color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                Where Every Step Becomes a Leap
+              </div>
             </div>
             <p style={{ 
               fontSize: '15px', color: '#9CA3AF', lineHeight: 1.8, 
               marginBottom: '40px', maxWidth: '320px', fontWeight: '500' 
             }}>
-              Family-centered therapeutic excellence helping children bridge developmental gaps with science-backed compassionate care.
+              Specialized Speech Therapy, Occupational Therapy, and Special Education in Mogappair, Chennai.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
               <Instagram size={20} color="#DC2626" style={{ cursor: 'pointer' }} />
@@ -159,7 +161,7 @@ export default function Footer() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#9CA3AF' }}>
             <Heart size={14} fill="#DC2626" color="transparent" />
-            <span>© 2026 SV Little Leapsters. All rights reserved.</span>
+            <span>© 2026 SV Little Leapsters Therapy Centre. All rights reserved.</span>
           </div>
 
           <div style={{ fontSize: '12px', display: 'flex', alignItems: 'center', gap: '12px' }}>

@@ -17,8 +17,8 @@ export default function HomePage() {
       <ProcessSection />
       <SupportSection />
       <WhyChooseUs />
-      <ClinicGallery />
       <AboutFounder />
+      <ClinicGallery />
       <Testimonials />
       <ContactSection />
     </main>

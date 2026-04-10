@@ -97,7 +97,7 @@ export default function ContactPage() {
             <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={e => e.preventDefault()}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <label style={{ fontSize: '12px', color: '#D8E1D3', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Your Name</label>
-                <input type="text" placeholder="e.g. Sarah Smith" style={{
+                <input type="text" placeholder="e.g. Your Name" style={{
                   backgroundColor: 'rgba(242, 235, 225, 0.1)', border: '1px solid rgba(197, 208, 188, 0.3)',
                   borderRadius: '12px', padding: '14px 16px', color: '#F2EBE1', fontSize: '15px', outline: 'none'
                 }} />
@@ -105,7 +105,7 @@ export default function ContactPage() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <label style={{ fontSize: '12px', color: '#D8E1D3', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email Address</label>
-                <input type="email" placeholder="sarah@example.com" style={{
+                <input type="email" placeholder="example@email.com" style={{
                   backgroundColor: 'rgba(242, 235, 225, 0.1)', border: '1px solid rgba(197, 208, 188, 0.3)',
                   borderRadius: '12px', padding: '14px 16px', color: '#F2EBE1', fontSize: '15px', outline: 'none'
                 }} />
