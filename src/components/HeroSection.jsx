@@ -56,8 +56,8 @@ export default function HeroSection() {
         zIndex: 5
       }} className="hero-quad-grid">
 
-        {/* 1. TOP LEFT: Structured Visual Hierarchy (Lowered to 170px) */}
-        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ padding: '0 80px', paddingTop: '170px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'left' }} className="hero-content-quad">
+        {/* 1. LEFT SIDE CONTENT: Spans full height for vertical centering */}
+        <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} style={{ gridRow: '1 / span 2', padding: '0 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'left' }} className="hero-content-quad">
 
           {/* Main Headline */}
           <motion.div variants={fadeUp} style={{ marginBottom: '16px', maxWidth: '420px' }}>
@@ -66,7 +66,7 @@ export default function HeroSection() {
               lineHeight: 1.1, color: '#111827', fontWeight: '800',
               letterSpacing: '-0.02em', textTransform: 'uppercase'
             }}>
-              Your Child Can —
+              Your Child Can
             </h1>
             <h1 style={{
               fontFamily: "'Instrument Serif', serif", fontSize: 'clamp(3rem, 6vw, 4.5rem)',
@@ -196,35 +196,32 @@ export default function HeroSection() {
               pointerEvents: 'auto'
             }}
           >
-            <a href="#gallery" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'inherit', textDecoration: 'none', width: '100px', height: '100px', borderRadius: '50%', backgroundColor: '#DC2626', boxShadow: '0 15px 40px rgba(220, 38, 38, 0.4)' }}
+            <a href="#gallery" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'inherit', textDecoration: 'none', width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#DC2626', boxShadow: '0 15px 40px rgba(220, 38, 38, 0.4)' }}
               onMouseEnter={e => e.currentTarget.style.backgroundColor = '#991B1B'}
               onMouseLeave={e => e.currentTarget.style.backgroundColor = '#DC2626'}>
-              <ArrowUpRight size={56} strokeWidth={2.5} color="#FFF9F0" />
+              <ArrowUpRight size={36} strokeWidth={2.5} color="#FFF9F0" />
             </a>
           </motion.div>
         </div>
 
       </div>
 
-      {/* FULL LENGTH TRUST BAR */}
+      {/* FLOATING STAT CARDS AT BOTTOM */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.8 }}
         style={{
           position: 'absolute',
-          bottom: '24px',
-          left: '24px',
-          right: '24px',
-          backgroundColor: '#FFFFFF',
-          border: '1px solid #EADDCF',
-          borderRadius: '24px',
-          padding: '24px 60px',
+          bottom: '40px',
+          left: '80px',
+          right: '80px',
           display: 'flex',
-          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '16px',
+          justifyContent: 'center',
           alignItems: 'center',
           zIndex: 40,
-          boxShadow: '0 20px 50px rgba(0,0,0,0.06)'
         }}
         className="hero-trust-bar"
       >
@@ -234,15 +231,25 @@ export default function HeroSection() {
           { num: '7', label: 'Verified Reviews' },
           { num: '2022', label: 'Established' },
           { num: '4.9/5', label: 'Trust Score' },
-          { num: '✓', label: 'Specialized Intervention' }
         ].map((stat, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontSize: '24px', fontWeight: '900', color: '#111827', lineHeight: 1 }}>{stat.num}</span>
-              <span style={{ fontSize: '11px', fontWeight: '800', color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '4px' }}>{stat.label}</span>
-            </div>
-            {i < 5 && <div style={{ height: '30px', width: '1px', backgroundColor: '#EADDCF', marginLeft: '40px' }} className="stat-divider" />}
-          </div>
+          <motion.div 
+            key={i} 
+            whileHover={{ y: -5 }}
+            style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              backgroundColor: '#FFFFFF',
+              padding: '12px 24px',
+              borderRadius: '20px',
+              border: '1px solid rgba(220, 38, 38, 0.08)',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+              minWidth: '140px',
+              alignItems: 'center'
+            }}
+          >
+            <span style={{ fontSize: '20px', fontWeight: '900', color: '#111827', lineHeight: 1 }}>{stat.num}</span>
+            <span style={{ fontSize: '10px', fontWeight: '800', color: '#DC2626', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '4px' }}>{stat.label}</span>
+          </motion.div>
         ))}
       </motion.div>
 
@@ -299,9 +306,12 @@ export default function HeroSection() {
             position: relative !important;
             padding: 40px 24px !important;
             flex-direction: column !important;
-            gap: 32px !important;
-            border-top: 1px solid #FFD6D6 !important;
+            gap: 16px !important;
+            bottom: auto !important;
+            left: auto !important;
+            right: auto !important;
           }
+          .hero-trust-bar > div { width: 100% !important; }
           .stat-divider { display: none !important; }
           .hero-social-quad { display: none !important; }
         }
