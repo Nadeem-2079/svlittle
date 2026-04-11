@@ -14,7 +14,9 @@ const credentials = [
 
 export default function AboutFounder() {
   const ref = useRef(null)
+  const headerRef = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
+  const headerInView = useInView(headerRef, { once: true, margin: '-20px' })
 
   return (
     <section id="about" style={{ padding: '140px 24px', backgroundColor: '#FFF9F0', position: 'relative', overflow: 'hidden' }}>
@@ -27,10 +29,11 @@ export default function AboutFounder() {
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
 
-        {/* Section Header */}
+        {/* Section Header — own ref so it animates immediately on scroll, not waiting for founder card */}
         <motion.div
+          ref={headerRef}
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
           style={{ textAlign: 'center', marginBottom: '80px' }}>
           <span style={{
@@ -54,7 +57,7 @@ export default function AboutFounder() {
           </p>
         </motion.div>
 
-        <div style={{ marginBottom: '80px', padding: '60px', backgroundColor: '#FFFFFF', borderRadius: '40px', border: '1px solid #FFD6D6', boxShadow: '0 20px 50px rgba(0,0,0,0.05)', position: 'relative', overflow: 'hidden' }}>
+        <div className="origin-card" style={{ marginBottom: '80px', padding: '60px', backgroundColor: '#FFFFFF', borderRadius: '40px', border: '1px solid #FFD6D6', boxShadow: '0 20px 50px rgba(0,0,0,0.05)', position: 'relative', overflow: 'hidden' }}>
           <AestheticSVG type="TEDDY" style={{ top: '-40px', left: '-40px', width: '200px' }} opacity={0.05} color="#DC2626" />
           <div style={{ position: 'relative', zIndex: 10 }}>
             <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '32px', fontWeight: '800', color: '#111827', marginBottom: '32px', textTransform: 'uppercase' }}>Our Origin <span style={{ color: '#DC2626' }}>Story</span></h3>
@@ -104,7 +107,7 @@ export default function AboutFounder() {
             </motion.div>
 
             {/* Right: Bio Column */}
-            <motion.div variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }} style={{ padding: '80px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#991B1B' }}>
+            <motion.div variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }} className="founder-bio-col" style={{ padding: '80px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#991B1B' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px', flexWrap: 'wrap', gap: '20px' }}>
                 <div>
                   <span style={{ fontSize: '13px', color: '#FFD6D6', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: '800', display: 'block', marginBottom: '8px' }}>
@@ -168,10 +171,21 @@ export default function AboutFounder() {
       <style>{`
         @media (max-width: 1024px) {
           .founder-grid { grid-template-columns: 1fr !important; }
+          .founder-bio-col { padding: 48px 40px !important; }
         }
         @media (max-width: 768px) {
           .origin-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-          div[style*="padding: '60px'"] { padding: 40px 24px !important; }
+          .origin-card { padding: 32px 24px !important; border-radius: 24px !important; }
+          section#about { padding: 80px 20px !important; }
+          .founder-bio-col { padding: 36px 24px !important; }
+          .founder-bio-col h3 { font-size: 28px !important; }
+          .founder-bio-col > div:first-child { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+          .founder-bio-col > div:last-child { flex-direction: column !important; align-items: stretch !important; gap: 24px !important; }
+          .founder-bio-col > div:last-child span { font-size: 18px !important; max-width: none !important; }
+          .founder-bio-col > div:last-child a { text-align: center !important; justify-content: center !important; padding: 14px 28px !important; }
+        }
+        @media (max-width: 480px) {
+          .founder-bio-col { padding: 28px 20px !important; }
         }
       `}</style>
     </section>

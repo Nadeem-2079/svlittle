@@ -158,7 +158,7 @@ export default function ServicesGrid() {
         </motion.div>
 
         <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '32px',
         }} className="services-main-grid">
           {services.map((s, i) => <ServiceCard key={s.title} s={s} index={i} />)}
@@ -167,9 +167,14 @@ export default function ServicesGrid() {
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
+        .service-card-inner { padding: 48px 40px; }
+        @media (max-width: 768px) {
           .services-main-grid { grid-template-columns: 1fr !important; }
-          div[style*="padding: '48px 40px'"] { padding: 40px 24px !important; }
+          section#services { padding: 80px 20px !important; }
+          .service-card-inner { padding: 36px 24px !important; }
+        }
+        @media (max-width: 480px) {
+          section#services { padding: 60px 16px !important; }
         }
       `}</style>
     </section>

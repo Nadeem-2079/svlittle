@@ -162,6 +162,12 @@ export default function Testimonials() {
         @media (max-width: 1024px) {
           .reviews-grid { grid-template-columns: 1fr !important; }
         }
+        @media (max-width: 768px) {
+          section#reviews { padding: 80px 20px !important; }
+        }
+        @media (max-width: 480px) {
+          section#reviews { padding: 60px 16px !important; }
+        }
         
         .vertical-marquee {
           animation: slideUp 25s linear infinite;

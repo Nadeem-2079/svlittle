@@ -150,6 +150,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 30 }} 
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="contact-form-box"
             style={{ 
               backgroundColor: '#DC2626', borderRadius: '40px', padding: '64px 56px', 
               color: '#FFF9F0', boxShadow: '0 30px 60px rgba(220, 38, 38, 0.2)' 
@@ -217,6 +218,13 @@ export default function ContactSection() {
         @media (max-width: 900px) {
           .contact-grid { grid-template-columns: 1fr !important; }
           .form-row { grid-template-columns: 1fr !important; }
+          section#contact { padding: 80px 20px !important; }
+          .contact-form-box { padding: 40px 28px !important; border-radius: 28px !important; }
+        }
+        @media (max-width: 480px) {
+          section#contact { padding: 60px 16px !important; }
+          .contact-form-box { padding: 32px 20px !important; border-radius: 24px !important; }
+          .contact-form-box h3 { font-size: 24px !important; }
         }
       `}</style>
     </section>

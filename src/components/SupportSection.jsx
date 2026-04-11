@@ -105,6 +105,14 @@ export default function SupportSection() {
         </div>
 
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          section#support { padding: 60px 0 60px !important; }
+        }
+        @media (max-width: 480px) {
+          section#support { padding: 48px 0 48px !important; }
+        }
+      `}</style>
     </section>
   )
 }

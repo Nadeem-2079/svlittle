@@ -29,7 +29,7 @@ export default function Footer() {
     }}>
 
       {/* Premium Floating Card Container */}
-      <div style={{
+      <div className="footer-card" style={{
         maxWidth: '1300px',
         margin: '0 auto',
         backgroundColor: '#111827', // Deep Navy Finish
@@ -179,11 +179,15 @@ export default function Footer() {
       <style>{`
         @media (max-width: 1200px) {
           .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 48px !important; }
+          .footer-card { padding: 64px 48px 40px !important; }
         }
         @media (max-width: 768px) {
-          footer { padding: 40px 16px !important; }
-          div[style*="borderRadius: '50px'"] { padding: 60px 32px 32px !important; borderRadius: '32px' !important; }
-          .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          footer { padding: 32px 16px !important; }
+          .footer-card { padding: 48px 28px 32px !important; border-radius: 32px !important; }
+          .footer-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+        }
+        @media (max-width: 480px) {
+          .footer-card { padding: 40px 20px 28px !important; border-radius: 24px !important; }
         }
       `}</style>
     </footer>

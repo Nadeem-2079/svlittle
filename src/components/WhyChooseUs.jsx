@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
   const inView = useInView(containerRef, { once: true, margin: '-100px' })
 
   return (
-    <section style={{ padding: '140px 24px', backgroundColor: '#FFF9F0', position: 'relative', overflow: 'hidden' }}>
+    <section id="why" style={{ padding: '140px 24px', backgroundColor: '#FFF9F0', position: 'relative', overflow: 'hidden' }}>
 
       {/* Background Decor */}
       <AestheticSVG type="TEDDY" style={{ top: '10%', right: '-5%', width: '200px' }} opacity={0.06} color="#DC2626" />
@@ -136,6 +136,10 @@ export default function WhyChooseUs() {
       <style>{`
         @media (max-width: 768px) {
           .trust-grid { grid-template-columns: 1fr !important; }
+          section#why { padding: 80px 20px !important; }
+        }
+        @media (max-width: 480px) {
+          section#why { padding: 60px 16px !important; }
         }
       `}</style>
     </section>

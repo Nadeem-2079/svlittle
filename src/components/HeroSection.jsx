@@ -291,10 +291,10 @@ export default function HeroSection() {
           .hero-stat-quad { 
             display: flex !important; 
             padding: 20px 24px !important; 
-            margin-top: 50px !important;
+            margin-top: 0 !important;
             align-items: center !important; 
             justify-content: center !important;
-            order: 2 !important; 
+            order: 3 !important; 
             border: none !important;
           }
           .hero-stat-quad > div {
@@ -307,24 +307,24 @@ export default function HeroSection() {
             transform: none !important;
           }
           .hero-service-tag { 
-            width: 260px !important; 
-            padding: 10px 14px !important; 
+            width: min(280px, 80vw) !important; 
+            padding: 12px 20px !important; 
             border-radius: 100px !important;
             display: flex !important;
             flex-direction: row !important;
             align-items: center !important;
             justify-content: flex-start !important;
-            gap: 10px !important;
+            gap: 12px !important;
             box-shadow: 0 8px 18px rgba(220, 38, 38, 0.05) !important;
             border: 1px solid rgba(220, 38, 38, 0.1) !important;
             background-color: #FFFFFF !important;
             text-align: left !important;
-            font-size: 12px !important; /* Slightly smaller to prevent wrap */
+            font-size: 13px !important;
           }
-          /* Subtle centered zig-zag */
-          .hero-service-tag:nth-child(1) { transform: translateX(-12px) !important; }
-          .hero-service-tag:nth-child(2) { transform: translateX(12px) !important; }
-          .hero-service-tag:nth-child(3) { transform: translateX(-4px) !important; }
+          /* Remove zig-zag — keep tags perfectly center-aligned */
+          .hero-service-tag:nth-child(1) { transform: none !important; }
+          .hero-service-tag:nth-child(2) { transform: none !important; }
+          .hero-service-tag:nth-child(3) { transform: none !important; }
           .hero-action-btn {
             width: 48px !important;
             height: 48px !important;
@@ -338,31 +338,37 @@ export default function HeroSection() {
           .central-focal { 
             position: relative !important; 
             transform: none !important; 
-            margin: 40px auto !important; 
+            margin: 24px auto 0 !important; 
             top: auto !important;
             left: auto !important;
             width: 260px !important; 
             height: 380px !important; 
-            order: 3 !important; 
+            order: 2 !important; 
           }
           .hero-experience-quad {
             display: none !important;
           }
           .hero-trust-bar {
             position: relative !important;
-            padding: 40px 24px !important;
-            flex-direction: column !important;
-            gap: 16px !important;
+            padding: 32px 20px !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
             bottom: auto !important;
             left: auto !important;
             right: auto !important;
+            justify-content: center !important;
           }
-          .hero-trust-bar > div { width: 100% !important; }
+          .hero-trust-bar > div { 
+            width: auto !important;
+            min-width: 100px !important;
+            flex: 1 1 100px !important;
+          }
           .stat-divider { display: none !important; }
           .hero-social-quad { display: none !important; }
           .hero-cta-btn { 
-            padding: 12px 24px !important; 
-            font-size: 13px !important;
+            padding: 14px 28px !important; 
+            font-size: 14px !important;
           }
         }
       `}</style>

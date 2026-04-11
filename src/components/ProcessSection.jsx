@@ -84,8 +84,8 @@ export default function ProcessSection() {
         {/* Timeline Container */}
         <div style={{ position: 'relative', width: '100%', padding: '40px 0' }}>
           
-          {/* Horizontal Desktop Line */}
-          <div className="hidden md:block" style={{
+          {/* Horizontal Desktop Line - hidden on mobile */}
+          <div className="desktop-process-line" style={{
             position: 'absolute',
             top: '28px', 
             left: '0',
@@ -225,6 +225,7 @@ export default function ProcessSection() {
             left: 28px !important;
             transform: none !important;
           }
+          .desktop-process-line { display: none !important; }
           .process-step {
             flex-direction: row !important;
             align-items: flex-start !important;
@@ -242,6 +243,10 @@ export default function ProcessSection() {
             padding: 12px 28px !important;
             font-size: 13px !important;
           }
+          section#process { padding: 80px 20px !important; }
+        }
+        @media (max-width: 480px) {
+          section#process { padding: 60px 16px !important; }
         }
       `}</style>
     </section>
