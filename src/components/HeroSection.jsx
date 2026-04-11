@@ -87,11 +87,11 @@ export default function HeroSection() {
           {/* Delicate Mission Tagline */}
 
           <motion.div variants={fadeUp}>
-            <Link to="/#contact" style={{
+            <Link to="/#contact" className="hero-cta-btn" style={{
               backgroundColor: '#DC2626', color: '#FFF9F0',
               padding: '16px 36px', borderRadius: '100px',
-              fontSize: '14px', fontWeight: '800', textDecoration: 'none',
-              letterSpacing: '0.05em', textTransform: 'uppercase',
+              fontSize: '15px', fontWeight: '800', textDecoration: 'none',
+              letterSpacing: '0.02em',
               display: 'inline-flex', alignItems: 'center', gap: '10px',
               boxShadow: '0 8px 16px rgba(220, 38, 38, 0.15)', transition: 'all 0.3s'
             }}
@@ -114,23 +114,36 @@ export default function HeroSection() {
               <motion.div
                 key={idx}
                 variants={fadeUp}
+                whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(220, 38, 38, 0.12)', borderColor: 'rgba(220, 38, 38, 0.3)' }}
+                className="hero-service-tag"
                 style={{
                   backgroundColor: '#FFFFFF',
-                  padding: '16px 24px',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(220, 38, 38, 0.1)',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+                  padding: '16px 28px',
+                  borderRadius: '100px',
+                  border: '1px solid rgba(220, 38, 38, 0.15)',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.04)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '12px',
+                  gap: '14px',
                   color: '#111827',
                   fontWeight: '700',
-                  fontSize: '14px',
+                  fontSize: '13px',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.02em'
+                  letterSpacing: '0.06em',
+                  cursor: 'pointer',
+                  transition: 'border-color 0.3s'
                 }}
               >
-                <div style={{ color: '#DC2626' }}>{s.icon}</div>
+                <div style={{ 
+                  color: '#DC2626',
+                  backgroundColor: 'rgba(220, 38, 38, 0.05)',
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>{s.icon}</div>
                 {s.title}
               </motion.div>
             ))}
@@ -153,8 +166,8 @@ export default function HeroSection() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: '480px',
-          height: '480px',
+          width: '340px',
+          height: '500px',
           zIndex: 20,
           pointerEvents: 'none'
         }} className="central-focal">
@@ -165,7 +178,7 @@ export default function HeroSection() {
             style={{
               width: '100%',
               height: '100%',
-              borderRadius: '50%', // PERFECT CIRCLE
+              borderRadius: '200px', // VERTICAL PILL SHAPE
               backgroundColor: '#FFFFFF',
               border: '1px solid rgba(220, 38, 38, 0.12)',
               boxShadow: '0 40px 100px rgba(0,0,0,0.12)',
@@ -190,16 +203,16 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             style={{
               position: 'absolute',
-              bottom: '15%',
-              right: '25px',
+              bottom: '5%',
+              right: '15px',
               zIndex: 30,
               pointerEvents: 'auto'
             }}
           >
-            <a href="#gallery" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'inherit', textDecoration: 'none', width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#DC2626', boxShadow: '0 15px 40px rgba(220, 38, 38, 0.4)' }}
+            <a href="#gallery" className="hero-action-btn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'inherit', textDecoration: 'none', width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#DC2626', boxShadow: '0 15px 40px rgba(220, 38, 38, 0.4)' }}
               onMouseEnter={e => e.currentTarget.style.backgroundColor = '#991B1B'}
               onMouseLeave={e => e.currentTarget.style.backgroundColor = '#DC2626'}>
-              <ArrowUpRight size={36} strokeWidth={2.5} color="#FFF9F0" />
+              <ArrowUpRight size={20} strokeWidth={3} color="#FFF9F0" />
             </a>
           </motion.div>
         </div>
@@ -277,26 +290,59 @@ export default function HeroSection() {
           }
           .hero-stat-quad { 
             display: flex !important; 
-            padding: 24px !important; 
+            padding: 20px 24px !important; 
+            margin-top: 50px !important;
             align-items: center !important; 
+            justify-content: center !important;
             order: 2 !important; 
+            border: none !important;
           }
-          .hero-stat-quad div {
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+          .hero-stat-quad > div {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
             gap: 12px !important;
             width: 100% !important;
             max-width: none !important;
+            transform: none !important;
           }
-          .hero-stat-quad div div { width: auto !important; padding: 12px !important; }
+          .hero-service-tag { 
+            width: 260px !important; 
+            padding: 10px 14px !important; 
+            border-radius: 100px !important;
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 10px !important;
+            box-shadow: 0 8px 18px rgba(220, 38, 38, 0.05) !important;
+            border: 1px solid rgba(220, 38, 38, 0.1) !important;
+            background-color: #FFFFFF !important;
+            text-align: left !important;
+            font-size: 12px !important; /* Slightly smaller to prevent wrap */
+          }
+          /* Subtle centered zig-zag */
+          .hero-service-tag:nth-child(1) { transform: translateX(-12px) !important; }
+          .hero-service-tag:nth-child(2) { transform: translateX(12px) !important; }
+          .hero-service-tag:nth-child(3) { transform: translateX(-4px) !important; }
+          .hero-action-btn {
+            width: 48px !important;
+            height: 48px !important;
+            right: 10px !important;
+            bottom: 5% !important;
+          }
+          .hero-action-btn svg {
+            width: 18px !important;
+            height: 18px !important;
+          }
           .central-focal { 
             position: relative !important; 
             transform: none !important; 
             margin: 40px auto !important; 
             top: auto !important;
             left: auto !important;
-            width: 300px !important; 
-            height: 300px !important; 
+            width: 260px !important; 
+            height: 380px !important; 
             order: 3 !important; 
           }
           .hero-experience-quad {
@@ -314,6 +360,10 @@ export default function HeroSection() {
           .hero-trust-bar > div { width: 100% !important; }
           .stat-divider { display: none !important; }
           .hero-social-quad { display: none !important; }
+          .hero-cta-btn { 
+            padding: 12px 24px !important; 
+            font-size: 13px !important;
+          }
         }
       `}</style>
     </section>

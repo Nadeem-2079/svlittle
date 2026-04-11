@@ -21,13 +21,13 @@ export default function Footer() {
   const googleReviewLink = "https://www.google.com/search?sca_esv=a0464d9551b247bc&sxsrf=ANbL-n5gA4NzbE2N28CeIspKmjVKogBLnw:1775585636180&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZVu9Ct4kRJlaIvMI6DGekn5VgpCPl7P4IaINThxuMTdEeoMpqvB2n0PGUdemqMS4XAJTsqfzwj6jcltQPzemGslbxPlr2kmw4vBt1XcYri03HdQjY2HP1eKY9Dprtm2-4fdID4%3D&q=SV+Little+Leapsters+therapy+centre+Reviews&sa=X&ved=2ahUKEwiQrvL4q9yTAxVfZWwGHcl6BqEQ0bkNegQIQxAH&biw=1528&bih=732&dpr=1.25";
 
   return (
-    <footer style={{ 
+    <footer style={{
       backgroundColor: '#FFF9F0', // Base background to isolate the rounded box
       padding: '80px 24px',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      
+
       {/* Premium Floating Card Container */}
       <div style={{
         maxWidth: '1300px',
@@ -61,9 +61,9 @@ export default function Footer() {
                 Where Every Step Becomes a Leap
               </div>
             </div>
-            <p style={{ 
-              fontSize: '15px', color: '#9CA3AF', lineHeight: 1.8, 
-              marginBottom: '40px', maxWidth: '320px', fontWeight: '500' 
+            <p style={{
+              fontSize: '15px', color: '#9CA3AF', lineHeight: 1.8,
+              marginBottom: '40px', maxWidth: '320px', fontWeight: '500'
             }}>
               Specialized Speech Therapy, Occupational Therapy, and Special Education in Mogappair, Chennai.
             </p>
@@ -75,17 +75,17 @@ export default function Footer() {
 
           {/* 2. Specialties */}
           <div>
-            <h4 style={{ 
-              fontFamily: "'Instrument Serif', serif", fontSize: '24px', 
+            <h4 style={{
+              fontFamily: "'Instrument Serif', serif", fontSize: '24px',
               color: '#DC2626', marginBottom: '32px', fontStyle: 'italic'
             }}>
               Specialties
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               {links.services.map(l => (
-                <a key={l.name} href={l.path} style={{ 
-                  fontSize: '15px', color: '#D1D5DB', textDecoration: 'none', 
-                  transition: 'color 0.2s', fontWeight: '500' 
+                <a key={l.name} href={l.path} style={{
+                  fontSize: '15px', color: '#D1D5DB', textDecoration: 'none',
+                  transition: 'color 0.2s', fontWeight: '500'
                 }} onMouseEnter={e => e.target.style.color = '#FFF9F0'} onMouseLeave={e => e.target.style.color = '#D1D5DB'}>
                   {l.name}
                 </a>
@@ -95,17 +95,17 @@ export default function Footer() {
 
           {/* 3. Center Navigation */}
           <div>
-            <h4 style={{ 
-              fontFamily: "'Instrument Serif', serif", fontSize: '24px', 
+            <h4 style={{
+              fontFamily: "'Instrument Serif', serif", fontSize: '24px',
               color: '#DC2626', marginBottom: '32px', fontStyle: 'italic'
             }}>
               The Center
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               {links.center.map(l => (
-                <Link key={l.name} to={l.path} style={{ 
-                  fontSize: '15px', color: '#D1D5DB', textDecoration: 'none', 
-                  transition: 'color 0.2s', fontWeight: '500' 
+                <Link key={l.name} to={l.path} style={{
+                  fontSize: '15px', color: '#D1D5DB', textDecoration: 'none',
+                  transition: 'color 0.2s', fontWeight: '500'
                 }} onMouseEnter={e => e.target.style.color = '#FFF9F0'} onMouseLeave={e => e.target.style.color = '#D1D5DB'}>
                   {l.name}
                 </Link>
@@ -115,16 +115,16 @@ export default function Footer() {
 
           {/* 4. Professional Connection */}
           <div>
-            <h4 style={{ 
-              fontFamily: "'Instrument Serif', serif", fontSize: '24px', 
+            <h4 style={{
+              fontFamily: "'Instrument Serif', serif", fontSize: '24px',
               color: '#DC2626', marginBottom: '32px', fontStyle: 'italic'
             }}>
               Connection
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <a href="mailto:svlittleleapsters@gmail.com" style={{ 
-                color: '#FFF9F0', textDecoration: 'none', display: 'flex', 
-                gap: '12px', alignItems: 'center', fontSize: '15px', fontWeight: '600' 
+              <a href="mailto:svlittleleapsters@gmail.com" style={{
+                color: '#FFF9F0', textDecoration: 'none', display: 'flex',
+                gap: '12px', alignItems: 'center', fontSize: '15px', fontWeight: '600'
               }}>
                 <Mail size={18} color="#DC2626" /> svlittleleapsters@gmail.com
               </a>
@@ -132,7 +132,7 @@ export default function Footer() {
                 <MapPin size={18} color="#DC2626" style={{ flexShrink: 0, marginTop: '4px' }} />
                 <span style={{ fontSize: '14px', lineHeight: 1.6 }}>595, 1st Block, Valliammai Street, Mogappair West, Chennai — 600037</span>
               </div>
-              
+
               {/* Premium Google Review Link */}
               <a href={googleReviewLink} target="_blank" rel="noopener noreferrer" style={{
                 marginTop: '16px', display: 'flex', alignItems: 'center', gap: '10px',
@@ -165,9 +165,9 @@ export default function Footer() {
           </div>
 
           <div style={{ fontSize: '12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Digital Partner</span>
+            <span style={{ color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Developed By</span>
             <a href="https://www.ausdauergroups.in" target="_blank" rel="noopener noreferrer" style={{
-              display: 'flex', alignItems: 'center', gap: '4px', 
+              display: 'flex', alignItems: 'center', gap: '4px',
               color: '#FFF9F0', fontWeight: '800', textDecoration: 'none', transition: 'color 0.2s'
             }} onMouseEnter={e => e.currentTarget.style.color = '#DC2626'} onMouseLeave={e => e.currentTarget.style.color = '#FFF9F0'}>
               AUSDAUER GROUPS <ExternalLink size={14} />

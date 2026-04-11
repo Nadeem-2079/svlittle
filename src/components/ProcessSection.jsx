@@ -141,6 +141,7 @@ export default function ProcessSection() {
                     alignItems: 'center',
                     textAlign: 'center'
                   }}
+                  className="process-step"
                 >
                   <div style={{
                     width: '56px',
@@ -160,35 +161,37 @@ export default function ProcessSection() {
                     transition: 'all 0.3s',
                     position: 'relative',
                     zIndex: 2
-                  }}>
+                  }} className="process-step-number">
                     {step.num}
                   </div>
 
-                  <h3 style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: '15px',
-                    fontWeight: '800',
-                    color: '#111827',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '16px',
-                    lineHeight: 1.3,
-                    minHeight: '40px',
-                    display: 'flex',
-                    alignItems: 'center'
-                  }}>
-                    {step.title}
-                  </h3>
-                  
-                  <p style={{
-                    fontSize: '14px',
-                    color: '#6B7280',
-                    lineHeight: 1.6,
-                    maxWidth: '240px',
-                    opacity: 0.95
-                  }}>
-                    {step.desc}
-                  </p>
+                  <div className="process-step-content">
+                    <h3 style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: '15px',
+                      fontWeight: '800',
+                      color: '#111827',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      marginBottom: '16px',
+                      lineHeight: 1.3,
+                      minHeight: '40px',
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
+                      {step.title}
+                    </h3>
+                    
+                    <p style={{
+                      fontSize: '14px',
+                      color: '#6B7280',
+                      lineHeight: 1.6,
+                      maxWidth: '240px',
+                      opacity: 0.95
+                    }}>
+                      {step.desc}
+                    </p>
+                  </div>
                 </motion.div>
               )
             })}
@@ -196,11 +199,11 @@ export default function ProcessSection() {
         </div>
         
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '80px' }}>
-          <a href="#contact" style={{ 
+          <a href="#contact" className="process-cta-btn" style={{ 
             backgroundColor: '#DC2626', color: '#FFF9F0',
             padding: '18px 48px', borderRadius: '100px',
-            fontSize: '14px', fontWeight: '800', textDecoration: 'none',
-            letterSpacing: '0.1em', textTransform: 'uppercase',
+            fontSize: '15px', fontWeight: '800', textDecoration: 'none',
+            letterSpacing: '0.02em',
             border: '1px solid #DC2626',
             boxShadow: '0 12px 24px rgba(220, 38, 38, 0.3)', transition: 'all 0.3s'
           }}
@@ -219,6 +222,25 @@ export default function ProcessSection() {
           }
           .mobile-only-line { 
             display: block !important; 
+            left: 28px !important;
+            transform: none !important;
+          }
+          .process-step {
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            gap: 20px !important;
+          }
+          .process-step-number {
+            flex-shrink: 0 !important;
+            margin-bottom: 0 !important;
+          }
+          .process-step-content {
+            text-align: left !important;
+          }
+          .process-cta-btn {
+            padding: 12px 28px !important;
+            font-size: 13px !important;
           }
         }
       `}</style>

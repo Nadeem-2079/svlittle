@@ -14,12 +14,12 @@ const features = [
   {
     icon: <LayoutGrid size={24} />,
     title: "Comprehensive Care",
-    desc: "All 3 therapies in one place—no need to run to different clinics for Speech, OT, or Special Education."
+    desc: "All 3 therapies in one place,no need to run to different clinics for Speech, OT, or Special Education."
   },
   {
     icon: <Zap size={24} />,
     title: "Personalized Programs",
-    desc: "Programs built specifically for your child’s unique needs, never a one-size-fits-all template."
+    desc: "Programs built specifically for your child’s unique needs, never a one-size fits all template."
   },
   {
     icon: <Users size={24} />,
@@ -73,9 +73,9 @@ function FeatureCard({ f, index }) {
         {f.icon}
       </div>
       <div>
-        <h4 style={{ 
-          fontFamily: "'Inter', sans-serif", fontSize: '18px', fontWeight: '800', 
-          color: '#111827', marginBottom: '8px', textTransform: 'uppercase' 
+        <h4 style={{
+          fontFamily: "'Inter', sans-serif", fontSize: '18px', fontWeight: '800',
+          color: '#111827', marginBottom: '8px', textTransform: 'uppercase'
         }}>
           {f.title}
         </h4>
@@ -93,15 +93,15 @@ export default function WhyChooseUs() {
 
   return (
     <section style={{ padding: '140px 24px', backgroundColor: '#FFF9F0', position: 'relative', overflow: 'hidden' }}>
-      
+
       {/* Background Decor */}
       <AestheticSVG type="TEDDY" style={{ top: '10%', right: '-5%', width: '200px' }} opacity={0.06} color="#DC2626" />
       <AestheticSVG type="TOY_BLOCKS" style={{ bottom: '10%', left: '-5%', width: '200px' }} opacity={0.06} color="#DC2626" />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-        
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           ref={containerRef}
           initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={stagger}
           style={{ textAlign: 'center', marginBottom: '80px' }}

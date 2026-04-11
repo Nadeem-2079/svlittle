@@ -99,8 +99,8 @@ export default function Header() {
           <a href="#contact" style={{ textDecoration: 'none' }}>
             <button style={{
               backgroundColor: '#DC2626', color: '#FFF9F0', border: 'none',
-              padding: '10px 24px', borderRadius: '100px', fontSize: '12px', fontWeight: '800',
-              textTransform: 'uppercase', letterSpacing: '0.08em', cursor: 'pointer',
+              padding: '10px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: '800',
+              letterSpacing: '0.05em', cursor: 'pointer',
               boxShadow: '0 4px 12px rgba(220, 38, 38, 0.12)', transition: 'all 0.3s'
             }} onMouseEnter={e => e.target.style.transform = 'translateY(-2px)'} onMouseLeave={e => e.target.style.transform = 'translateY(0)'}>
               Book a Consultation
@@ -188,7 +188,7 @@ export default function Header() {
                 <a href="#contact" style={{ textDecoration: 'none' }}>
                   <button style={{
                     width: '100%', backgroundColor: '#DC2626', color: '#FFF9F0', border: 'none',
-                    padding: '16px', borderRadius: '12px', fontSize: '13px', fontWeight: '800', textTransform: 'uppercase'
+                    padding: '16px', borderRadius: '12px', fontSize: '14px', fontWeight: '800'
                   }}>
                     Book a Consultation
                   </button>

@@ -39,9 +39,23 @@ export default function ScrollToTopButton() {
           }}
           aria-label="Scroll to top"
         >
-          <ArrowUp size={24} strokeWidth={2.5} />
+          <ArrowUp size={24} className="top-arrow-icon" strokeWidth={2.5} />
         </motion.button>
       )}
+      <style>{`
+        @media (max-width: 768px) {
+          button[aria-label="Scroll to top"] {
+            width: 44px !important;
+            height: 44px !important;
+            bottom: 24px !important;
+            right: 24px !important;
+          }
+          .top-arrow-icon {
+            width: 20px !important;
+            height: 20px !important;
+          }
+        }
+      `}</style>
     </AnimatePresence>
   )
 }

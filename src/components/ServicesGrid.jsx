@@ -23,7 +23,7 @@ const services = [
     icon: <Hand size={24} />,
     title: 'Occupational Therapy',
     hook: "Small hands. Big milestones. We help get there.",
-    desc: "We help children build the everyday skills that school and life demand — writing, focusing, getting dressed, handling emotions, and more. If your child struggles with coordination or daily tasks, Occupational Therapy can help.",
+    desc: "We help children build the everyday skills that school and life demand writing, focusing, getting dressed, handling emotions and more. If your child struggles with coordination or daily tasks, Occupational Therapy can help.",
     meta: ["Children (Pediatric)", "40 min sessions"],
     color: '#DC2626'
   },
@@ -31,7 +31,7 @@ const services = [
     icon: <BookOpen size={24} />,
     title: 'Special Education',
     hook: "Every child learns differently. We teach their way.",
-    desc: "We work one-on-one with children who need a different kind of learning — customized lessons, patience, and a plan built just for them.",
+    desc: "We work one-on-one with children who need a different kind of learning customized lessons, patience, and a plan built just for them.",
     meta: ["Children and teenagers", "40 min sessions"],
     color: '#DC2626'
   }
@@ -71,23 +71,23 @@ function ServiceCard({ s, index }) {
         {s.icon}
       </div>
 
-      <h3 style={{ 
-        fontFamily: "'Inter', sans-serif", fontSize: '26px', fontWeight: '800', 
-        color: '#111827', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '-0.01em' 
+      <h3 style={{
+        fontFamily: "'Inter', sans-serif", fontSize: '26px', fontWeight: '800',
+        color: '#111827', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '-0.01em'
       }}>
         {s.title}
       </h3>
 
-      <div style={{ 
-        fontFamily: "'Instrument Serif', serif", fontSize: '20px', 
-        color: '#DC2626', fontStyle: 'italic', marginBottom: '24px', lineHeight: 1.2 
+      <div style={{
+        fontFamily: "'Instrument Serif', serif", fontSize: '20px',
+        color: '#DC2626', fontStyle: 'italic', marginBottom: '24px', lineHeight: 1.2
       }}>
         {s.hook}
       </div>
 
-      <p style={{ 
-        fontSize: '16px', color: '#4B5563', lineHeight: 1.7, 
-        marginBottom: '40px', flex: 1 
+      <p style={{
+        fontSize: '16px', color: '#4B5563', lineHeight: 1.7,
+        marginBottom: '40px', flex: 1
       }}>
         {s.desc}
       </p>
@@ -121,13 +121,13 @@ function ServiceCard({ s, index }) {
 
 export default function ServicesGrid() {
   return (
-    <section id="services" style={{ 
-      padding: '160px 24px', 
-      backgroundColor: '#FFF9F0', 
-      position: 'relative', 
-      overflow: 'hidden' 
+    <section id="services" style={{
+      padding: '160px 24px',
+      backgroundColor: '#FFF9F0',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
-      
+
       {/* Rich Pediatric Aesthetic Layering */}
       <AestheticSVG type="TEDDY" style={{ top: '5%', left: '-2%', width: '180px' }} opacity={0.06} color="#DC2626" />
       <AestheticSVG type="TOY_BLOCKS" style={{ bottom: '15%', right: '2%', width: '220px' }} opacity={0.08} color="#DC2626" rotate={10} />
