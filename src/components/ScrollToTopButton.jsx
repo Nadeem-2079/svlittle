@@ -19,29 +19,32 @@ export default function ScrollToTopButton() {
   }
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          whileHover={{ scale: 1.1, backgroundColor: '#991B1B' }} // Darker red on hover
-          whileTap={{ scale: 0.9 }}
-          onClick={scrollToTop}
-          style={{
-            position: 'fixed', bottom: '40px', right: '40px', zIndex: 1000,
-            width: '56px', height: '56px', borderRadius: '50%',
-            backgroundColor: '#DC2626', color: '#FFF9F0',
-            border: 'none', cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 10px 30px rgba(220, 38, 38, 0.3)',
-            transition: 'background-color 0.2s'
-          }}
-          aria-label="Scroll to top"
-        >
-          <ArrowUp size={24} className="top-arrow-icon" strokeWidth={2.5} />
-        </motion.button>
-      )}
+    <>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.button
+            key="scroll-to-top"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileHover={{ scale: 1.1, backgroundColor: '#991B1B' }} // Darker red on hover
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollToTop}
+            style={{
+              position: 'fixed', bottom: '40px', right: '40px', zIndex: 1000,
+              width: '56px', height: '56px', borderRadius: '50%',
+              backgroundColor: '#DC2626', color: '#FFF9F0',
+              border: 'none', cursor: 'pointer',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              boxShadow: '0 10px 30px rgba(220, 38, 38, 0.3)',
+              transition: 'background-color 0.2s'
+            }}
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={24} className="top-arrow-icon" strokeWidth={2.5} />
+          </motion.button>
+        )}
+      </AnimatePresence>
       <style>{`
         @media (max-width: 768px) {
           button[aria-label="Scroll to top"] {
@@ -56,6 +59,6 @@ export default function ScrollToTopButton() {
           }
         }
       `}</style>
-    </AnimatePresence>
+    </>
   )
 }

@@ -96,7 +96,7 @@ export default function Header() {
               Contact
             </button>
           </a>
-          <a href="#contact" style={{ textDecoration: 'none' }}>
+          <Link to="/book" style={{ textDecoration: 'none' }}>
             <button style={{
               backgroundColor: '#DC2626', color: '#FFF9F0', border: 'none',
               padding: '10px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: '800',
@@ -105,7 +105,7 @@ export default function Header() {
             }} onMouseEnter={e => e.target.style.transform = 'translateY(-2px)'} onMouseLeave={e => e.target.style.transform = 'translateY(0)'}>
               Book a Consultation
             </button>
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -185,14 +185,14 @@ export default function Header() {
                     Call Now
                   </button>
                 </a>
-                <a href="#contact" style={{ textDecoration: 'none' }}>
+                <Link to="/book" style={{ textDecoration: 'none' }}>
                   <button style={{
                     width: '100%', backgroundColor: '#DC2626', color: '#FFF9F0', border: 'none',
                     padding: '16px', borderRadius: '12px', fontSize: '14px', fontWeight: '800'
                   }}>
                     Book a Consultation
                   </button>
-                </a>
+                </Link>
               </motion.div>
             </motion.div>
           </>

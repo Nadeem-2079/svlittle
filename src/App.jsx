@@ -4,6 +4,9 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import HomePage from './pages/HomePage.jsx'
 import CareersPage from './pages/CareersPage.jsx'
+import ApplyPage from './pages/ApplyPage.jsx'
+import BookingPage from './pages/BookingPage.jsx'
+import AdminPage from './pages/AdminPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import ScrollToTopButton from './components/ScrollToTopButton.jsx'
 import { MessageCircle } from 'lucide-react'
@@ -35,6 +38,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/careers" element={<CareersPage />} />
+            <Route path="/apply" element={<ApplyPage />} />
+            <Route path="/book" element={<BookingPage />} />
+            <Route path="/admin" element={<AdminPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Sparkles } from 'lucide-react'
 import AestheticSVG from './AestheticSVG.jsx'
 
@@ -199,7 +200,7 @@ export default function ProcessSection() {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '80px' }}>
-          <a href="#contact" className="process-cta-btn" style={{
+          <Link to="/book" className="process-cta-btn" style={{
             backgroundColor: '#DC2626', color: '#FFF9F0',
             padding: '18px 48px', borderRadius: '100px',
             fontSize: '15px', fontWeight: '800', textDecoration: 'none',
@@ -210,7 +211,7 @@ export default function ProcessSection() {
             onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#991B1B'; e.currentTarget.style.transform = 'translateY(-2px)' }}
             onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#DC2626'; e.currentTarget.style.transform = 'translateY(0)' }}>
             Book a Consultation
-          </a>
+          </Link>
         </div>
       </div>
 

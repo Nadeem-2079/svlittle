@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Users, Briefcase, ChevronRight, Heart } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Phone, Users, Briefcase, ChevronRight, Heart, GraduationCap, ClipboardCheck } from 'lucide-react'
 import AestheticSVG from '../components/AestheticSVG.jsx'
 
 const fadeUp = {
@@ -64,30 +65,48 @@ export default function CareersPage() {
             <p style={{ fontSize: '14px', color: '#6B7280', marginTop: '16px' }}>Candidates will be contacted for an initial clinical discussion.</p>
           </div>
 
-          <div style={{ display: 'grid', gap: '16px' }}>
+          <div style={{ display: 'grid', gap: '20px' }}>
             {[
-              { title: 'Speech-Language Pathologist', icon: <Users size={20} /> },
-              { title: 'Occupational Therapist', icon: <Briefcase size={20} /> },
-              { title: 'Front Desk Administrator', icon: <Phone size={20} /> }
+              { title: 'Speech Language Pathologist', qual: 'BASLP, MASLP, M.Sc(Speech)', icon: <Users size={20} /> },
+              { title: 'Occupational Therapist', qual: 'B.OT, M.OT', icon: <Briefcase size={20} /> },
+              { title: 'Special Educator', qual: 'B.Ed (Special Education)', icon: <GraduationCap size={20} /> }
             ].map((role) => (
               <motion.div 
                 key={role.title} 
-                whileHover={{ x: 10, borderColor: '#DC2626' }}
+                whileHover={{ y: -5 }}
                 style={{
-                  backgroundColor: '#FFF9F0', borderRadius: '16px', padding: '24px',
+                  backgroundColor: '#FFF9F0', borderRadius: '24px', padding: '24px 32px',
                   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                  border: '1px solid #EADDCF', cursor: 'default', transition: 'all 0.3s'
+                  border: '1px solid #EADDCF', transition: 'all 0.3s',
+                  flexWrap: 'wrap', gap: '20px'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: '#DC2626', color: '#FFF9F0', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 10px rgba(220, 38, 38, 0.2)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: 1, minWidth: '250px' }}>
+                  <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: '#DC2626', color: '#FFF9F0', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 10px rgba(220, 38, 38, 0.2)', flexShrink: 0 }}>
                     {role.icon}
                   </div>
-                  <div style={{ fontSize: '18px', fontWeight: '700', color: '#111827' }}>
-                    {role.title}
+                  <div>
+                    <div style={{ fontSize: '19px', fontWeight: '800', color: '#111827', marginBottom: '4px' }}>
+                      {role.title}
+                    </div>
+                    <div style={{ fontSize: '13px', color: '#6B7280', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <ClipboardCheck size={14} color="#DC2626" /> {role.qual}
+                    </div>
                   </div>
                 </div>
-                <ChevronRight color="#DC2626" />
+                
+                <Link 
+                  to={`/apply?role=${encodeURIComponent(role.title)}`}
+                  style={{
+                    backgroundColor: '#111827', color: '#FFF9F0', textDecoration: 'none',
+                    padding: '12px 24px', borderRadius: '100px', fontSize: '14px', fontWeight: '700',
+                    display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s'
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.backgroundColor = '#DC2626'}
+                  onMouseLeave={e => e.currentTarget.style.backgroundColor = '#111827'}
+                >
+                  Apply Now <ChevronRight size={16} />
+                </Link>
               </motion.div>
             ))}
           </div>

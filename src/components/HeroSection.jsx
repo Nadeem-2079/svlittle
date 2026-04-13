@@ -84,7 +84,7 @@ export default function HeroSection() {
           {/* Delicate Mission Tagline */}
 
           <motion.div variants={fadeUp}>
-            <Link to="/#contact" className="hero-cta-btn" style={{
+            <Link to="/book" className="hero-cta-btn" style={{
               backgroundColor: '#DC2626', color: '#FFF9F0',
               padding: '16px 36px', borderRadius: '100px',
               fontSize: '15px', fontWeight: '800', textDecoration: 'none',
