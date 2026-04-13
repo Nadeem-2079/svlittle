@@ -43,9 +43,6 @@ export default function HeroSection() {
       <AestheticSVG type="TEDDY" style={{ top: '10%', right: '5%', width: '350px' }} opacity={0.06} color="#DC2626" />
       <AestheticSVG type="TOY_BLOCKS" style={{ bottom: '10%', left: '5%', width: '120px' }} opacity={0.06} color="#DC2626" />
 
-      {/* Structured Minimalist Grid Line - ONLY SLEEPING LINE */}
-      <GridLine style={{ top: '50%' }} />
-
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
@@ -134,7 +131,7 @@ export default function HeroSection() {
                   transition: 'border-color 0.3s'
                 }}
               >
-                <div style={{ 
+                <div style={{
                   color: '#DC2626',
                   backgroundColor: 'rgba(220, 38, 38, 0.05)',
                   width: '32px',
@@ -188,7 +185,7 @@ export default function HeroSection() {
             }}
           >
             <img
-              src="/homesv.png"
+              src="/hero.jpeg"
               alt="Therapy Clinic"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />

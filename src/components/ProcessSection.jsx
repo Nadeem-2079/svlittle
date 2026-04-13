@@ -42,7 +42,7 @@ export default function ProcessSection() {
 
   return (
     <section id="process" style={{ padding: '140px 24px', backgroundColor: '#FFF9F0', position: 'relative', overflow: 'hidden' }}>
-      
+
       {/* Rich Pediatric Aesthetic Layering */}
       <AestheticSVG type="TEDDY" style={{ top: '5%', left: '2%', width: '150px' }} opacity={0.10} color="#FFD6D6" />
       <AestheticSVG type="TOY_BLOCKS" style={{ top: '15%', right: '2%', width: '120px' }} opacity={0.06} color="#DC2626" rotate={15} />
@@ -50,7 +50,7 @@ export default function ProcessSection() {
       <AestheticSVG type="KIDS_HEART" style={{ bottom: '10%', right: '5%', width: '150px' }} opacity={0.1} color="#DC2626" />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-        
+
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -83,23 +83,23 @@ export default function ProcessSection() {
 
         {/* Timeline Container */}
         <div style={{ position: 'relative', width: '100%', padding: '40px 0' }}>
-          
+
           {/* Horizontal Desktop Line - hidden on mobile */}
           <div className="desktop-process-line" style={{
             position: 'absolute',
-            top: '28px', 
+            top: '28px',
             left: '0',
             width: '100%',
             height: '100px',
             zIndex: 0,
             opacity: 0.3
           }}>
-             <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style={{ width: '100%', height: '100%' }}>
-              <path 
-                d="M 100,68 Q 150,20 300,68 T 500,68 T 700,68 T 900,68 T 1100,68" 
-                fill="none" 
-                stroke="#DC2626" 
-                strokeWidth="3" 
+            <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style={{ width: '100%', height: '100%' }}>
+              <path
+                d="M 100,68 Q 150,20 300,68 T 500,68 T 700,68 T 900,68 T 1100,68"
+                fill="none"
+                stroke="#DC2626"
+                strokeWidth="3"
                 strokeDasharray="12 12"
                 strokeLinecap="round"
                 vectorEffect="non-scaling-stroke"
@@ -128,7 +128,7 @@ export default function ProcessSection() {
             zIndex: 1
           }} className="process-grid">
             {steps.map((step, index) => {
-              const isActiveStep = index === 2 || index === 3; 
+              const isActiveStep = index === 2 || index === 3;
               return (
                 <motion.div
                   key={step.num}
@@ -181,7 +181,7 @@ export default function ProcessSection() {
                     }}>
                       {step.title}
                     </h3>
-                    
+
                     <p style={{
                       fontSize: '14px',
                       color: '#6B7280',
@@ -197,9 +197,9 @@ export default function ProcessSection() {
             })}
           </div>
         </div>
-        
+
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '80px' }}>
-          <a href="#contact" className="process-cta-btn" style={{ 
+          <a href="#contact" className="process-cta-btn" style={{
             backgroundColor: '#DC2626', color: '#FFF9F0',
             padding: '18px 48px', borderRadius: '100px',
             fontSize: '15px', fontWeight: '800', textDecoration: 'none',
@@ -207,8 +207,8 @@ export default function ProcessSection() {
             border: '1px solid #DC2626',
             boxShadow: '0 12px 24px rgba(220, 38, 38, 0.3)', transition: 'all 0.3s'
           }}
-          onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#991B1B'; e.currentTarget.style.transform = 'translateY(-2px)' }}
-          onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#DC2626'; e.currentTarget.style.transform = 'translateY(0)' }}>
+            onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#991B1B'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+            onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#DC2626'; e.currentTarget.style.transform = 'translateY(0)' }}>
             Book a Consultation
           </a>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Mail, MapPin, Heart, Instagram, Linkedin, ExternalLink, Star } from 'lucide-react'
+import { Mail, MapPin, Instagram, Linkedin, ExternalLink, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import AestheticSVG from './AestheticSVG.jsx'
 
@@ -160,7 +160,6 @@ export default function Footer() {
           position: 'relative', zIndex: 10
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#9CA3AF' }}>
-            <Heart size={14} fill="#DC2626" color="transparent" />
             <span>© 2026 SV Little Leapsters Therapy Centre. All rights reserved.</span>
           </div>
 

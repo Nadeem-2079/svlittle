@@ -4,7 +4,7 @@ import { Star, Sparkles } from 'lucide-react'
 import AestheticSVG from './AestheticSVG.jsx'
 
 const personalFav = {
-  name: 'A Grateful Parent',
+  name: 'Nancy Deva',
   date: '2 months ago',
   text: "Earlier, my daughter attended another speech therapy center, but unfortunately, we didn’t see much improvement in her speech. Later, a friend recommended SV Speech Therapy, and since then, we’ve noticed a significant positive change—my daughter has started speaking words.\n\nVasanthi ma’am and Suriya ma’am handle the children with great care and kindness, which makes a big difference. I would also like to mention the Occupational Therapy team—Shruti ma’am and sir are doing an excellent job. Their approach towards the kids, along with the way they communicate and guide parents, is truly commendable. They understand the issues well and provide effective solutions.\n\nThere is good transparency here, as we can both see and hear how the activities are conducted. They also provide daily reviews.\n\nOverall, I would highly recommend this place for the development of children."
 }
@@ -42,8 +42,8 @@ function ReviewCard({ r, isFeatured }) {
       transition: 'all 0.3s ease',
       cursor: 'pointer'
     }}
-    onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#DC2626' }}
-    onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#FFD6D6' }}
+      onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#DC2626' }}
+      onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#FFD6D6' }}
     >
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
         <div style={{
@@ -58,12 +58,12 @@ function ReviewCard({ r, isFeatured }) {
           <span style={{ fontSize: '13px', color: '#6B7280' }}>{r.date}</span>
         </div>
         <div style={{ marginLeft: 'auto' }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.56 12.25C22.56 11.47 22.49 10.72 22.36 10H12V14.26H17.92C17.66 15.63 16.88 16.81 15.69 17.61V20.35H19.26C21.34 18.43 22.56 15.6 22.56 12.25Z" fill="#4285F4"/>
-              <path d="M12 23C14.97 23 17.46 22.02 19.26 20.35L15.69 17.61C14.7 18.27 13.46 18.66 12 18.66C9.17 18.66 6.78 16.74 5.86 14.18H2.18V17.03C4.01 20.65 7.74 23 12 23Z" fill="#34A853"/>
-              <path d="M5.86 14.18C5.63 13.49 5.5 12.76 5.5 12C5.5 11.24 5.63 10.51 5.86 9.82V6.97H2.18C1.43 8.47 1 10.18 1 12C1 13.82 1.43 15.53 2.18 17.03L5.86 14.18Z" fill="#FBBC05"/>
-              <path d="M12 5.34C13.62 5.34 15.07 5.9 16.22 6.99L19.34 3.87C17.46 2.11 14.97 1 12 1C7.74 1 4.01 3.35 2.18 6.97L5.86 9.82C6.78 7.26 9.17 5.34 12 5.34Z" fill="#EA4335"/>
-            </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25C22.56 11.47 22.49 10.72 22.36 10H12V14.26H17.92C17.66 15.63 16.88 16.81 15.69 17.61V20.35H19.26C21.34 18.43 22.56 15.6 22.56 12.25Z" fill="#4285F4" />
+            <path d="M12 23C14.97 23 17.46 22.02 19.26 20.35L15.69 17.61C14.7 18.27 13.46 18.66 12 18.66C9.17 18.66 6.78 16.74 5.86 14.18H2.18V17.03C4.01 20.65 7.74 23 12 23Z" fill="#34A853" />
+            <path d="M5.86 14.18C5.63 13.49 5.5 12.76 5.5 12C5.5 11.24 5.63 10.51 5.86 9.82V6.97H2.18C1.43 8.47 1 10.18 1 12C1 13.82 1.43 15.53 2.18 17.03L5.86 14.18Z" fill="#FBBC05" />
+            <path d="M12 5.34C13.62 5.34 15.07 5.9 16.22 6.99L19.34 3.87C17.46 2.11 14.97 1 12 1C7.74 1 4.01 3.35 2.18 6.97L5.86 9.82C6.78 7.26 9.17 5.34 12 5.34Z" fill="#EA4335" />
+          </svg>
         </div>
       </div>
       <GoogleStars />
@@ -83,11 +83,11 @@ export default function Testimonials() {
   return (
     <section id="reviews" style={{
       padding: '140px 24px',
-      backgroundColor: '#FFF9F0', 
+      backgroundColor: '#FFF9F0',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      
+
       {/* Rich Pediatric Aesthetic Layering */}
       <AestheticSVG type="TEDDY" style={{ top: '5%', left: '2%', width: '150px' }} opacity={0.12} color="#FFD6D6" rotate={10} />
       <AestheticSVG type="TOY_BLOCKS" style={{ bottom: '10%', right: '5%', width: '180px' }} opacity={0.08} color="#DC2626" rotate={-10} />
@@ -95,7 +95,7 @@ export default function Testimonials() {
       <AestheticSVG type="KIDS_HEART" style={{ bottom: '20%', left: '3%', width: '150px' }} opacity={0.12} color="#DC2626" />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-        
+
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <span style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
@@ -150,7 +150,7 @@ export default function Testimonials() {
               className="vertical-marquee"
             >
               {[...otherReviews, ...otherReviews, ...otherReviews].map((r, i) => (
-                 <div key={i}><ReviewCard r={r} isFeatured={false} /></div>
+                <div key={i}><ReviewCard r={r} isFeatured={false} /></div>
               ))}
             </div>
           </div>
